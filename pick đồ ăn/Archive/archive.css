@@ -1,0 +1,1056 @@
+@font-face {
+    font-family: "BVH Anto Plot Mono Trial";
+    src: url("./assets/fonts/BVHAntoPlotMonoTrial-Bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    background: #ffffff;
+    color: #2F2A26;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    color: inherit;
+}
+
+.archive-page {
+    width: 1512px;
+    min-height: 982px;
+    margin: 0 auto;
+    padding: 48px 72px 72px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 56px;
+}
+
+.archive-header {
+    width: 1368px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.san-logo {
+    width: 50px;
+    height: 50px;
+    top: 40px;
+    left: 46px;
+    display: block;
+    flex: 0 0 50px;
+    text-decoration: none;
+}
+
+.san-logo img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    top: 40px;
+    left: 46px;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.menu-btn {
+    width: 36.67px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-btn span {
+    display: block;
+    width: 36.67px;
+    height: 3px;
+    background: #000000;
+    border-radius: 2px;
+}
+
+.gallery-section {
+    width: 1368px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.archive-title {
+    color: #2F2A26;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 72px;
+    letter-spacing: -1.44px;
+    white-space: nowrap;
+}
+
+.photo-collage {
+    position: relative;
+    width: 1416px;
+    height: 750px;
+    overflow: hidden;
+}
+
+.archive-photo {
+    position: absolute;
+    animation-name: archiveFloat;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+.photo-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    transform: rotate(var(--rotation));
+    transform-origin: top left;
+    transition:
+        transform 0.7s cubic-bezier(.22, 1, .36, 1),
+        box-shadow 0.7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.archive-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.archive-photo:hover {
+    z-index: 100;
+}
+
+.archive-photo:hover .photo-inner {
+    transform:
+        translateY(-8px)
+        rotate(0deg)
+        scale(1.035);
+}
+
+.photo-1 {
+    width: 381.46px;
+    height: 277.43px;
+    left: 63.52px;
+    top: 91px;
+    --rotation: 3deg;
+    animation-duration: 7.8s;
+    animation-delay: -1.2s;
+    z-index: 5;
+}
+
+.photo-2 {
+    width: 376.87px;
+    height: 277.11px;
+    left: 463px;
+    top: 111.29px;
+    --rotation: -4deg;
+    animation-duration: 8.6s;
+    animation-delay: -4.1s;
+    z-index: 6;
+}
+
+.photo-3 {
+    width: 411.46px;
+    height: 284.54px;
+    left: 857.93px;
+    top: 91px;
+    --rotation: 2deg;
+    animation-duration: 7.2s;
+    animation-delay: -2.7s;
+    z-index: 7;
+}
+
+.photo-4 {
+    width: 387.18px;
+    height: 296.53px;
+    left: 70px;
+    top: 339.74px;
+    --rotation: -5deg;
+    animation-duration: 9.1s;
+    animation-delay: -5.3s;
+    z-index: 8;
+}
+
+.photo-5 {
+    width: 500px;
+    height: 370px;
+    left: 440px;
+    top: 340px;
+    --rotation: 1deg;
+    animation-duration: 8.2s;
+    animation-delay: -3.6s;
+    z-index: 9;
+}
+
+.photo-6 {
+    width: 340px;
+    height: 260px;
+    left: 916px;
+    top: 405.79px;
+    --rotation: -3deg;
+    animation-duration: 9.6s;
+    animation-delay: -6.2s;
+    z-index: 10;
+}
+
+.custom-meal-photo {
+    width: 320px;
+    height: 220px;
+    left: 1045px;
+    top: 485px;
+    --rotation: 4deg;
+    animation-name: customMealFloat;
+    animation-duration: 9.2s;
+    animation-delay: -3.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: 18;
+}
+
+.custom-meal-photo[hidden] {
+    display: none;
+}
+
+.custom-meal-inner {
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow:
+        0 14px 30px
+        rgba(46, 41, 38, .18);
+}
+
+.custom-meal-inner img {
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.custom-meal-photo:hover {
+    animation-play-state: paused;
+    z-index: 120;
+}
+
+.custom-meal-photo:hover .custom-meal-inner {
+    transform:
+        translateY(-10px)
+        rotate(0deg)
+        scale(1.04);
+
+    box-shadow:
+        0 24px 42px
+        rgba(46, 41, 38, .24);
+}
+
+.archive-tag {
+    position: absolute;
+    z-index: 50;
+    padding: 15px 16px;
+    border-radius: 9px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35.2px;
+    white-space: nowrap;
+}
+
+.tag-memories {
+    left: 347px;
+    top: 255px;
+    background: #F3D573;
+}
+
+.tag-family {
+    left: 319px;
+    top: 570px;
+    background: #A3D9C9;
+}
+
+.tag-meals {
+    left: 834px;
+    top: 355px;
+    background: #ffffff;
+}
+
+@keyframes archiveFloat {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: translate3d(2px, -4px, 0);
+    }
+
+    50% {
+        transform: translate3d(-1px, -9px, 0);
+    }
+
+    75% {
+        transform: translate3d(-3px, -5px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes customMealFloat {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    35% {
+        transform: translate3d(8px, -14px, 0);
+    }
+
+    70% {
+        transform: translate3d(-6px, -7px, 0);
+    }
+}
+
+.share-section {
+    width: 1368px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-bottom: 40px;
+}
+
+.share-title {
+    color: #2F2A26;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 35.2px;
+}
+
+.upload-layout {
+    width: 1368px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+.upload-box {
+    flex: 0 0 360px;
+    width: 360px;
+    height: 220px;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #D9D1C7;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        opacity .35s ease;
+}
+
+.upload-box:hover,
+.upload-box.is-dragging {
+    transform: translateY(-3px);
+    border-color: #8A8178;
+    background: #FFFCF3;
+    box-shadow:
+        0 10px 25px
+        rgba(47, 42, 38, .06);
+}
+
+.upload-box.is-full {
+    cursor: default;
+    background: #FCFAF7;
+}
+
+.upload-box.is-full:hover {
+    transform: none;
+    border-color: #D9D1C7;
+    box-shadow: none;
+}
+
+.upload-icon {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #8A8178;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.upload-text {
+    width: 100%;
+    text-align: center;
+    color: #8A8178;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+}
+
+.upload-count {
+    color: #B0A79F;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.memory-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 360px 360px;
+    grid-template-rows: 220px 220px;
+    gap: 24px;
+}
+
+.memory-slot {
+    position: relative;
+    width: 360px;
+    height: 220px;
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #E7E1D8;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.memory-slot:hover {
+    border-color: #D9D1C7;
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 24px
+        rgba(47, 42, 38, .05);
+}
+
+.slot-icon {
+    width: 40px;
+    height: 40px;
+    background: #F7F3EE;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slot-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #8A8178;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.memory-slot.has-image .slot-icon {
+    display: none;
+}
+
+.slot-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: developPhoto 1.5s ease forwards;
+    transition:
+        transform .7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.memory-slot:hover .slot-image {
+    transform: scale(1.045);
+}
+
+@keyframes developPhoto {
+    0% {
+        opacity: .15;
+        filter:
+            grayscale(1)
+            brightness(1.8)
+            contrast(.7);
+    }
+
+    40% {
+        opacity: .7;
+        filter:
+            grayscale(.75)
+            brightness(1.4)
+            contrast(.8);
+    }
+
+    75% {
+        opacity: 1;
+        filter:
+            grayscale(.2)
+            brightness(1.1)
+            contrast(.95);
+    }
+
+    100% {
+        opacity: 1;
+        filter:
+            grayscale(0)
+            brightness(1)
+            contrast(1);
+    }
+}
+
+.share-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.continue-btn {
+    border: 0;
+    padding: 8px 0;
+    background: transparent;
+    color: #2F2A26;
+    cursor: pointer;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 20px;
+    font-weight: 700;
+    transition: transform .3s ease;
+}
+
+.continue-btn:hover {
+    transform: translateX(8px);
+}
+
+.memory-modal,
+.viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.memory-modal.is-open,
+.viewer.is-open {
+    display: flex;
+}
+
+.modal-backdrop,
+.viewer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(47, 42, 38, .42);
+    backdrop-filter: blur(4px);
+}
+
+.modal-card {
+    position: relative;
+    z-index: 2;
+    width: 1050px;
+    max-width: 94vw;
+    max-height: 90vh;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 34px;
+    box-shadow:
+        0 28px 80px
+        rgba(0, 0, 0, .20);
+    scrollbar-width: none;
+}
+
+.modal-card::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-close,
+.viewer-close {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+    z-index: 5;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #2F2A26;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.modal-preview {
+    width: 100%;
+    min-height: 500px;
+    background: #F7F3EE;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.modal-preview img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.modal-content {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 8px;
+    color: #2F2A26;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 14px;
+    border: 1px solid #D9D1C7;
+    border-radius: 10px;
+    outline: none;
+    background: #ffffff;
+    color: #2F2A26;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    border-color: #8A8178;
+}
+
+.modal-content textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.modal-actions {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 13px 15px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.modal-secondary {
+    border: 1px solid #2F2A26;
+    background: transparent;
+    color: #2F2A26;
+}
+
+.save-memory {
+    margin-left: auto;
+    border: 1px solid #2F2A26;
+    background: #2F2A26;
+    color: #ffffff;
+}
+
+.memory-field {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    display: none;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #FFFFFF 43%,
+            #FFFDF7 58%,
+            #FFF9E7 72%,
+            #FFF2C8 86%,
+            #F3D573 100%
+        );
+}
+
+.memory-field.is-active {
+    display: block;
+}
+
+.memory-field::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -14%;
+    height: 52%;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(243, 213, 115, .42) 0%,
+            rgba(243, 213, 115, .20) 45%,
+            rgba(243, 213, 115, 0) 72%
+        );
+    filter: blur(28px);
+}
+
+.field-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    padding: 34px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.field-controls button {
+    border: 0;
+    background: transparent;
+    color: #2F2A26;
+    cursor: pointer;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 16px;
+    font-weight: 700;
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.field-controls button:hover {
+    transform: translateY(-2px);
+    opacity: .65;
+}
+
+.floating-memories {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    perspective: 1200px;
+}
+
+.floating-memory {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    z-index: var(--z);
+    cursor: pointer;
+    animation:
+        memoryFloat
+        var(--duration)
+        ease-in-out
+        infinite;
+    animation-delay: var(--delay);
+    will-change: transform;
+}
+
+.floating-memory.is-center {
+    animation-name: memoryFloatCenter;
+}
+
+.floating-memory-inner {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow:
+        0 18px 34px
+        rgba(46, 43, 37, .16);
+
+    transform:
+        perspective(1200px)
+        rotateX(var(--rx))
+        rotateY(var(--ry))
+        rotateZ(var(--rz));
+
+    transition:
+        transform .9s cubic-bezier(.22, 1, .36, 1),
+        box-shadow .9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.floating-memory:hover {
+    z-index: 200;
+}
+
+.floating-memory:hover .floating-memory-inner {
+    transform:
+        perspective(1200px)
+        rotateX(0deg)
+        rotateY(0deg)
+        rotateZ(0deg)
+        translateZ(45px)
+        scale(1.06);
+
+    box-shadow:
+        0 28px 55px
+        rgba(46, 43, 37, .24);
+}
+
+.floating-memory img {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+}
+
+.floating-memory-copy {
+    padding: 10px 4px 3px;
+    opacity: 0;
+    transform: translateY(7px);
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.floating-memory:hover .floating-memory-copy {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.floating-memory-copy h4 {
+    color: #2F2A26;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.floating-memory-copy p {
+    margin-top: 4px;
+    color: #5F5954;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+@keyframes memoryFloat {
+    0% {
+        transform: translate3d(-2px, 4px, 0);
+    }
+
+    25% {
+        transform: translate3d(2px, -3px, 3px);
+    }
+
+    50% {
+        transform: translate3d(4px, -11px, 8px);
+    }
+
+    75% {
+        transform: translate3d(0, -7px, 4px);
+    }
+
+    100% {
+        transform: translate3d(-2px, 4px, 0);
+    }
+}
+
+@keyframes memoryFloatCenter {
+    0% {
+        transform:
+            translateX(-50%)
+            translate3d(-2px, 4px, 0);
+    }
+
+    25% {
+        transform:
+            translateX(-50%)
+            translate3d(2px, -3px, 3px);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translate3d(4px, -11px, 8px);
+    }
+
+    75% {
+        transform:
+            translateX(-50%)
+            translate3d(0, -7px, 4px);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            translate3d(-2px, 4px, 0);
+    }
+}
+
+.yellow-glow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.yellow-glow-back {
+    z-index: 5;
+    bottom: 0;
+    height: 40vh;
+    background:
+        linear-gradient(
+            to top,
+            rgba(243, 213, 115, .68) 0%,
+            rgba(243, 213, 115, .43) 34%,
+            rgba(243, 213, 115, .20) 65%,
+            rgba(243, 213, 115, 0) 100%
+        );
+}
+
+.yellow-glow-front {
+    z-index: 6;
+    bottom: 0;
+    height: 25vh;
+    background:
+        linear-gradient(
+            to top,
+            rgba(236, 194, 67, .30) 0%,
+            rgba(243, 213, 115, .16) 48%,
+            rgba(243, 213, 115, 0) 100%
+        );
+}
+
+.viewer-card {
+    position: relative;
+    z-index: 2;
+    width: min(760px, 92vw);
+    max-height: 90vh;
+    padding: 14px;
+    overflow: auto;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow:
+        0 28px 80px
+        rgba(0, 0, 0, .24);
+    scrollbar-width: none;
+}
+
+.viewer-card::-webkit-scrollbar {
+    display: none;
+}
+
+.viewer-card > img {
+    display: block;
+    width: 100%;
+    max-height: 68vh;
+    object-fit: contain;
+    background: #F7F3EE;
+    border-radius: 10px;
+}
+
+.viewer-text {
+    padding: 18px 10px 8px;
+}
+
+.viewer-text h3 {
+    color: #2F2A26;
+    font-family: "BVH Anto Plot Mono Trial", monospace;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.viewer-text p {
+    color: #5F5954;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1511px) {
+    .archive-page {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .archive-photo,
+    .floating-memory,
+    .custom-meal-photo {
+        animation: none;
+    }
+}

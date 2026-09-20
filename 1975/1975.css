@@ -1,0 +1,1115 @@
+/* ==========================================
+   FONT DECLARATIONS
+   ========================================== */
+@font-face {
+  font-family: 'iCielBC Lodestone';
+  src: url('./fonts/iCielBC Lodestone.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DFPLiHei-Bd';
+  src: url('./fonts/DFPLiHei-Bd.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'ZeroGothic';
+  src: url('./fonts/ZeroGothic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'BVH Anto Plot Mono Trial';
+  src: url('./fonts/BVHAntoPlotMonoTrial-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DFVN STAMPA V2';
+  src: url('./fonts/DFVN STAMPA V2.woff2') format('woff2');
+}
+
+/* ==========================================
+   BASE & LAYOUT STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background: white;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 10558px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+}
+
+/* Background Layers */
+.bg-layer {
+  width: 1512px;
+  height: 1008px;
+  left: 0px;
+  position: absolute;
+}
+
+.bg-0 { top: 0px; }
+.bg-1 { top: 1008px; }
+.bg-2 { top: 2016px; }
+.bg-3 { top: 3024px; }
+.bg-4 { top: 4032px; }
+.bg-5 { top: 5040px; }
+.bg-6 { top: 6048px; }
+.bg-7 { top: 7056px; }
+.bg-8 { top: 8064px; }
+.bg-9 { top: 9072px; }
+.bg-10 { top: 10080px; }
+
+/* ==========================================
+   TYPOGRAPHY & BRANDING
+   ========================================== */
+.brand-san {
+  left: 46px;
+  top: 42px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: 'iCielBC Lodestone', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.brand-kanji-1,
+.brand-kanji-2 {
+  left: 84px;
+  top: 40px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: 'ZeroGothic', sans-serif;
+  font-weight: 550;
+  word-wrap: break-word;
+}
+
+.title-container {
+  padding: 10px;
+  left: 552px;
+  top: 386px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+}
+
+.title-1975 {
+  color: #312520;
+  font-size: 180px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.turning-point-text {
+  position: absolute;
+  top: 2200px; /* Set to the exact vertical height on your 10558px canvas */
+  left: 133px;  /* Set to your preferred horizontal placement */
+  width: 85%;
+  color: black;
+  font-size: 18px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  min-height: 1.4em;
+  line-height: 1.4;
+  z-index: 10;
+}
+
+.turning-point-text .typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background-color: black;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: typewriterBlink 0.75s step-end infinite;
+}
+
+@keyframes typewriterBlink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================
+   TYPEWRITER TEXT STYLES
+   ========================================== */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background-color: black;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: typewriterBlink 0.75s step-end infinite;
+}
+
+@keyframes typewriterBlink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Food Coupon Text (Figma Styles) */
+.food-coupon-text {
+  position: absolute;
+  top: 4400px; /* Adjust vertical placement on your canvas as needed */
+  left: 180px;  /* Adjust horizontal placement as needed */
+  width: 90%;
+  color: black;
+  font-size: 18px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  min-height: 1.4em;
+  line-height: 1.4;
+  z-index: 10;
+}
+/* ==========================================
+   TYPEWRITER TEXT STYLES (SHARED FIGMA SPEC)
+   ========================================== */
+.typewriter-text {
+  position: absolute;
+  width: 80%;
+  color: black;
+  font-size: 18px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  min-height: 1.4em;
+  line-height: 1.4;
+  z-index: 10;
+}
+
+/* Positions across canvas (adjust vertical 'top' values as needed) */
+.food-coupon-text {
+  top: 4420px;
+  left: 185px;
+}
+
+.stove-text {
+  top: 7520px; /* Positioned right above Section 8 (Bếp lửa) */
+  left: 175px;
+}
+
+.eating-together-text {
+  top: 9100px; /* Positioned right above Section 10 (Ảnh bà) */
+  left: 208px;
+}
+
+.sharing-text {
+  top: 9650px; /* Positioned right above Section 11 (Gia đình ăn cơm) */
+  left: 398px;
+}
+/* ==========================================
+   COMPONENTS
+   ========================================== */
+.hamburger-menu {
+  width: 36.67px;
+  height: 22px;
+  left: 1404px;
+  top: 42px;
+  position: absolute;
+}
+
+.hamburger-line {
+  width: 36.67px;
+  height: 0px;
+  left: 36.67px;
+  position: absolute;
+  transform: rotate(-180deg);
+  transform-origin: top left;
+  outline: 3px black solid;
+  outline-offset: -1.50px;
+}
+
+.line-top { top: 0px; }
+.line-middle { top: 11px; }
+.line-bottom { top: 22px; }
+
+
+/* Container positioning for the next button at the bottom */
+/* Container position at the bottom of the canvas */
+.back-btn-link {
+  display: inline-block;
+  z-index: 100;
+}
+
+.back-btn-img {
+  width: 63px;
+  height: 63px;
+  left: 345px;
+  top: 10469px;
+  cursor: pointer;
+  user-select: none;
+  filter: brightness(1);
+  transition: filter 0.2s ease, transform 0.1s ease;
+  position: absolute;
+}
+
+/* Darkens PNG image to 85% brightness on hover */
+.back-btn-img:hover {
+  filter: brightness(0.85);
+}
+
+/* Darkens PNG image further to 70% brightness on click */
+.back-btn-img:active {
+  filter: brightness(0.7);
+  transform: scale(0.96);
+}
+
+.next-btn-link {
+  display: inline-block;
+  z-index: 100;
+}
+
+.next-btn-img {
+  width: 277px;
+  height: 73px;
+  left: 911px;
+  top: 10460px;
+  cursor: pointer;
+  filter: brightness(1);
+  transition: filter 0.2s ease, transform 0.1s ease;
+  position: absolute;
+}
+
+/* Darkens PNG image to 85% brightness on hover */
+.next-btn-img:hover {
+  filter: brightness(0.85);
+}
+
+/* Darkens PNG image further to 70% brightness on click */
+.next-btn-img:active {
+  filter: brightness(0.7);
+  transform: scale(0.96);
+}
+
+/* ==========================================
+   IMAGE ASSETS & ABSOLUTE POSITIONS
+   ========================================== */
+.asset {
+  position: absolute;
+}
+
+.asset-1 { width: 1512px; height: 1008px; left: 0px; top: 988px; }
+.asset-2 { width: 222px; height: 222px; left: 609px; top: 1079px; }
+.asset-3 { width: 297px; height: 298px; left: 800px; top: 1152px;}
+.asset-4 { width: 360px; height: 362px; left: 794px; top: 1434px; }
+.asset-5 { width: 155px; height: 156px; left: 676px; top: 1339px; }
+.asset-6 { width: 331px; height: 331px; left: 479px; top: 1492px;}
+.asset-7 { 
+  width: 124.19px; height: 353.76px; left: 445.43px; top: 1420px; 
+  transform: rotate(36deg); transform-origin: top left; 
+}
+.asset-8 { 
+  width: 419.81px; height: 250px; left: 645.23px; top: 1665.77px; 
+  transform: rotate(170deg); transform-origin: top left;
+}
+/* ------------------------------------------
+   XẾP HÀNG 2 - SILK FLOWING SINUOUS ANIMATION
+   ------------------------------------------ */
+.asset-9 { 
+  width: 2474px; 
+  height: 548px; 
+  left: -567px; 
+  top: 3404px; 
+  transform-origin: 50% 50%;
+  animation: silkSinuousFlow 14s linear infinite;
+  will-change: transform;
+}
+
+@keyframes silkSinuousFlow {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) skewX(0deg) scaleY(1);
+  }
+  16.66% {
+    transform: translate(-80px, -18px) rotate(1.2deg) skewX(1.5deg) scaleY(1.015);
+  }
+  33.33% {
+    transform: translate(-180px, -6px) rotate(0.4deg) skewX(0.5deg) scaleY(0.99);
+  }
+  50% {
+    transform: translate(-250px, 16px) rotate(-1.2deg) skewX(-1.4deg) scaleY(0.985);
+  }
+  66.66% {
+    transform: translate(-170px, 28px) rotate(-0.5deg) skewX(-0.6deg) scaleY(1.01);
+  }
+  83.33% {
+    transform: translate(-70px, 12px) rotate(0.8deg) skewX(0.9deg) scaleY(1.005);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) skewX(0deg) scaleY(1);
+  }
+}
+.asset-10 { width: 1373px; height: 915px; left: 69px; top: 3016px; }
+.asset-11 { 
+  width: 656.13px; 
+  height: 447.64px; 
+  left: 112px; 
+  top: 2646.03px; 
+  transform: rotate(-6deg); 
+  transform-origin: top left;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Cấu trúc hiệu ứng Lật 3D */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.asset-12 { width: 1512px; height: 1008px; left: 0px; top: 5040px; }
+.asset-13 { 
+  width: 384.56px; height: 278.21px; left: 1050.60px; top: 4536px; 
+  transform: rotate(27deg); transform-origin: top left; 
+}
+/* ==========================================
+   PULSE CLICK HINT (ANH XEP HANG)
+   ========================================== */
+/* ==========================================
+   TƯƠNG TÁC ĐÈN NẤP / HƯỚNG DẪN CLICK XẾP HÀNG
+   ========================================== */
+.click-icon-xep-hang {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  width: 70px; /* Adjust size as needed */
+  height: auto;
+  z-index: 20;
+  pointer-events: none; /* Allows click events to pass directly through to the card below */
+  transform: translate(-50%, -50%);
+  animation: clickFlicker 1s infinite alternate ease-in-out;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Flicker & pulse animation */
+@keyframes clickFlicker {
+  0% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+/* Class applied after clicking to hide click.png */
+.click-icon-xep-hang.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+/* ==========================================
+   TƯƠNG TÁC TEM LƯƠNG THỰC & BAO GẠO
+   ========================================== */
+.pulse-invitation {
+  animation: temPulse 1.6s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes temPulse {
+  0% {
+    transform: rotate(27deg) scale(1);
+    filter: drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+  }
+  50% {
+    transform: rotate(27deg) scale(1.08);
+  }
+  100% {
+    transform: rotate(27deg) scale(1);
+    filter: drop-shadow(0 0 0px rgba(255, 215, 0, 0));
+  }
+}
+
+.asset-13.picked-up {
+  opacity: 0;
+  pointer-events: none;
+  animation: none !important;
+  transition: opacity 0.4s ease;
+}
+
+.tem-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: auto;
+  pointer-events: none;
+  z-index: 999999;
+  display: none;
+  transform: translate(-50%, -50%) rotate(15deg);
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.tem-cursor-follower.active {
+  display: block;
+}
+
+body.holding-tem {
+  cursor: grabbing !important;
+}
+
+.target-icon-drop {
+  width: 100px;
+  height: 100px;
+  left: 622px;
+  top: 5411px;
+  position: absolute;
+  z-index: 30;
+  display: none;
+  cursor: pointer;
+}
+
+.target-icon-drop.active {
+  display: block;
+  animation: iconFlicker 0.9s infinite alternate ease-in-out;
+}
+
+@keyframes iconFlicker {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+.asset-bao-gao {
+  width: 275px;
+  height: 186px;
+  left: 547px;
+  top: 5437px;
+  position: absolute;
+  z-index: 25;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.8s ease-in-out, visibility 1.8s ease-in-out;
+}
+
+.asset-bao-gao.show {
+  opacity: 1;
+  visibility: visible;
+}
+.asset-14 { width: 627px; height: 433px; left: 429px; top: 6335px; }
+.asset-15 { width: 466px; height: 530px; left: 985px; top: 8971px; }
+.asset-22 { width: 1353px; height: 902px; left: 63px; top: 9607px; }
+.asset-16 { width: 1321px; height: 795px; left: 95px; top: 7666px; }
+.asset-17 { width: 335px; height: 296px; left: 1008px; top: 7691px; }
+.asset-18 { width: 302px; height: 271px; left: 185px; top: 7691px; }
+
+/* ==========================================
+   TƯƠNG TÁC NẮP NỒI
+   ========================================== */
+.draggable-lid {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
+}
+
+.draggable-lid:active {
+  cursor: grabbing;
+}
+
+.draggable-lid.rattling {
+  animation: lidRattle 0.12s infinite alternate ease-in-out;
+}
+
+@keyframes lidRattle {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-1.5px, -2px) rotate(-1.5deg); }
+  50% { transform: translate(1.5px, -1px) rotate(1deg); }
+  75% { transform: translate(-1px, -2.5px) rotate(-1deg); }
+  100% { transform: translate(1px, -0.5px) rotate(1.5deg); }
+}
+
+.draggable-lid.is-dragging {
+  animation: none !important;
+  z-index: 9999;
+  cursor: grabbing;
+}
+.asset-19 { width: 270px; height: 269px; left: 411px; top: 1204px; }
+.asset-20 { width: 256px; height: 249px; left: 837px; top: 6335px; }
+
+/* ==========================================
+   TƯƠNG TÁC TAY CHO GIA VỊ & HẠT MUỐI RƠI
+   ========================================== */
+body.salt-section-active {
+  cursor: none !important;
+}
+
+body.salt-section-active * {
+  cursor: none !important;
+}
+
+.tay-gia-vi-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: auto;
+  pointer-events: none;
+  z-index: 999999;
+  display: none;
+  transform: translate(-30%, -20%);
+  filter: drop-shadow(2px 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.tay-gia-vi-follower.active {
+  display: block;
+}
+
+#salt-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999998;
+}
+.asset-21 { width: 385px; height: 391px; left: 313px; top: 6552px; }
+
+.clickable-com-don,
+.clickable-dau-phu,
+.clickable-lac,
+.clickable-rau,
+.clickable-top-mo {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.clickable-com-don:hover,
+.clickable-dau-phu:hover,
+.clickable-lac:hover,
+.clickable-rau:hover,
+.clickable-top-mo:hover {
+  transform: scale(1.04);
+}
+
+/* ==========================================
+   MODAL POPUP STYLES
+   ========================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-container {
+  width: 1512px;
+  height: 1008px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.m-bg-1 { width: 1512px; height: 1008px; left: 0px; top: -13px; position: absolute; }
+.m-bg-2 { width: 1530px; height: 1020px; left: 0px; top: -19px; position: absolute; }
+.modal-menu-pos { left: 1404px; top: 42px; position: absolute; }
+
+.m-lac { width: 222px; height: 222px; left: 545px; top: 191px; position: absolute; }
+.m-topmo { width: 297px; height: 298px; left: 763px; top: 115px; position: absolute; }
+.m-dau { width: 360px; height: 362px; left: 786px; top: 398px; position: absolute; }
+.m-nuocmam { width: 155px; height: 156px; left: 651px; top: 398px; position: absolute; }
+.m-rautaptang { width: 331px; height: 331px; left: 475px; top: 536px; position: absolute; }
+.m-muoi { width: 419.81px; height: 72.01px; left: 656.23px; top: 518.77px; position: absolute; transform: rotate(152deg); transform-origin: top left; }
+.m-dua { width: 124.19px; height: 353.76px; left: 520.43px; top: 400px; position: absolute; transform: rotate(36deg); transform-origin: top left; }
+
+.modal-blur-bg {
+  width: 1512px;
+  height: 982px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(20px);
+}
+
+/* Modal Close Button (Image) */
+.modal-close-btn {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  left: 1324px;
+  top: 79px;
+  cursor: pointer;
+  z-index: 10;
+  object-fit: contain;
+}
+
+.m-card-box {
+  width: 936px;
+  height: 594px;
+  left: 293px;
+  top: 229.23px;
+  position: absolute;
+}
+
+.m-card-bg-img {
+  width: 936px;
+  height: 594px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.m-card-shadow {
+  width: 945.94px;
+  height: 582.97px;
+  left: 264px;
+  top: 159.36px;
+  position: absolute;
+}
+
+.m-card-paper {
+  width: 383.96px;
+  height: 448.96px;
+  left: 255.39px;
+  top: 158.85px;
+  position: absolute;
+  transform: rotate(3deg);
+  transform-origin: top left;
+}
+
+.m-card-clip {
+  width: 74.08px;
+  height: 147.60px;
+  left: 289.28px;
+  top: 151.25px;
+  position: absolute;
+  transform: rotate(-13deg);
+  transform-origin: top left;
+}
+
+/* ------------------------------------------
+   Modal Cơm Độn Specific Styles
+   ------------------------------------------ */
+.m-card-com-don {
+  width: 270px;
+  height: 269px;
+  left: 306px;
+  top: 257px;
+  position: absolute;
+}
+
+.m-card-detail-1 { width: 162px; height: 97px; left: 648px; top: 346px; position: absolute; }
+.m-card-detail-2 { width: 143px; height: 74px; left: 990px; top: 363px; position: absolute; }
+.m-card-detail-3 { width: 125.25px; height: 101.99px; left: 835px; top: 344px; position: absolute; }
+
+.m-title-text {
+  width: 195px;
+  left: 651px;
+  top: 220px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-quote-text {
+  width: 449px;
+  left: 663px;
+  top: 552px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.m-tag-grandma {
+  left: 656px;
+  top: 481px;
+  position: absolute;
+}
+
+.m-tag-ingredient {
+  left: 656px;
+  top: 283px;
+  position: absolute;
+}
+
+/* ------------------------------------------
+   Modal Đậu Phụ Tẩm Hành Specific Styles
+   ------------------------------------------ */
+.m-dau-phu-img {
+  width: 288px;
+  height: 290px;
+  left: 293px;
+  top: 237px;
+  position: absolute;
+}
+
+.m-dau-detail-1 { width: 105px; height: 60px; left: 665px; top: 353px; position: absolute; }
+.m-dau-detail-2 { 
+  width: 56.87px; height: 188.82px; left: 980.33px; top: 326px; 
+  position: absolute; transform: rotate(79deg); transform-origin: top left; 
+}
+.m-dau-detail-3 { width: 115px; height: 76px; left: 1010px; top: 334px; position: absolute; }
+
+.m-dau-title-text {
+  width: 195px;
+  left: 639px;
+  top: 217px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-dau-quote-1 {
+  width: 537px;
+  left: 641px;
+  top: 504px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-dau-quote-2 {
+  width: 525px;
+  left: 641px;
+  top: 601px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-dau-tag-grandma {
+  left: 641px;
+  top: 443px;
+  position: absolute;
+}
+
+.m-dau-tag-ingredient {
+  left: 639px;
+  top: 285px;
+  position: absolute;
+}
+
+/* ------------------------------------------
+   Modal Lạc Rang Specific Styles
+   ------------------------------------------ */
+.m-lac-img {
+  width: 222px;
+  height: 222px;
+  left: 322px;
+  top: 284px;
+  position: absolute;
+}
+
+.m-lac-detail-1 { width: 115px; height: 69px; left: 727px; top: 337px; position: absolute; }
+.m-lac-detail-2 { width: 139px; height: 82px; left: 930px; top: 324px; position: absolute; }
+
+.m-lac-title-text {
+  width: 311px;
+  left: 650px;
+  top: 215px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-lac-quote-1 {
+  width: 532px;
+  left: 651px;
+  top: 506px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-lac-quote-2 {
+  width: 523px;
+  left: 650px;
+  top: 594px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-lac-tag-ingredient {
+  left: 652px;
+  top: 277px;
+  position: absolute;
+}
+
+.m-lac-tag-grandma {
+  left: 652px;
+  top: 444px;
+  position: absolute;
+}
+
+/* ------------------------------------------
+   Modal Rau Tập Tàng Specific Styles
+   ------------------------------------------ */
+.m-rau-img {
+  width: 291px;
+  height: 291px;
+  left: 293px;
+  top: 237px;
+  position: absolute;
+}
+.m-rau-detail-1 { width: 164px; height: 78px; left: 626px; top: 336px; position: absolute; }
+.m-rau-detail-2 { width: 160px; height: 47px; left: 832px; top: 351px; position: absolute; }
+.m-rau-detail-3 { width: 112px; height: 92px; left: 1044px; top: 328px; position: absolute; }
+
+.m-rau-title-text {
+  width: 600px;
+  left: 650px;
+  top: 215px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-rau-quote-1 {
+  width: 532px;
+  left: 651px;
+  top: 506px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-rau-quote-2 {
+  width: 523px;
+  left: 650px;
+  top: 594px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-rau-tag-ingredient {
+  left: 652px;
+  top: 277px;
+  position: absolute;
+}
+
+.m-rau-tag-grandma {
+  left: 652px;
+  top: 444px;
+  position: absolute;
+}
+
+/* ------------------------------------------
+   Modal Tóp Mỡ (PORK GREAVES) Specific Styles
+   ------------------------------------------ */
+.m-topmo-img {
+  width: 257px;
+  height: 258px;
+  left: 314px;
+  top: 256px;
+  position: absolute;
+}
+
+.m-topmo-detail-1 {
+  width: 136px;
+  height: 94px;
+  left: 818px;
+  top: 321px;
+  position: absolute;
+}
+
+.m-topmo-title-text {
+  width: 311px;
+  left: 643px;
+  top: 215px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-topmo-quote-1 {
+  width: 493px;
+  left: 639px;
+  top: 501px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-topmo-quote-2 {
+  left: 639px;
+  top: 584px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-topmo-tag-ingredient {
+  left: 644px;
+  top: 285px;
+  position: absolute;
+}
+
+.m-topmo-tag-grandma {
+  left: 641px;
+  top: 443px;
+  position: absolute;
+}
+/* ==========================================
+   POPUP THOẠI LẠC RANG (HOVER TOOLTIP)
+   ========================================== */
+.lac-popup-tooltip {
+  width: 447px;
+  height: 112px;
+  left: 496px;
+  top: 960px;
+  position: absolute;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+/* ==========================================
+   POPUP THOẠI DISHES HOVER EFFECTS
+   ========================================== */
+.popup-thoai {
+  position: absolute;
+  width: 534px;
+  height: 134px;
+  z-index: 40;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transform: translateY(8px);
+}
+
+/* Trigger popup display on hover */
+.clickable-com-don:hover + .popup-thoai-com-don,
+.clickable-lac:hover + .popup-thoai-lac,
+.clickable-top-mo:hover + .popup-thoai-top-mo,
+.clickable-rau:hover + .popup-thoai-rau,
+.clickable-dau-phu:hover + .popup-thoai-dau-phu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Positions relative to each dish */
+.popup-thoai-com-don {
+  left: 125px;
+  top: 1090px;
+}
+
+.popup-thoai-lac {
+  left: 600px;
+  top: 960px;
+}
+
+.popup-thoai-top-mo {
+  left: 850px;
+  top: 1050px;
+}
+
+.popup-thoai-rau {
+  left: 200px;
+  top: 1380px;
+}
+
+.popup-thoai-dau-phu {
+  left: 850px;
+  top: 1330px;
+}

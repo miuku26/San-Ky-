@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Hall</title>
+    <link rel="stylesheet" href="./archive.css">
+</head>
+
+<body>
+
+    <main class="archive-page">
+
+        <header class="archive-header">
+
+            <a class="san-logo" href="./index.html" aria-label="SAN">
+                <img
+                    src="./assets/archive/san-logo.png"
+                    alt="SAN"
+                    draggable="false"
+                >
+            </a>
+
+            <button class="menu-btn" type="button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+        <section class="gallery-section">
+
+            <h1 class="archive-title">Archive hall</h1>
+
+            <div class="photo-collage" id="photoCollage">
+
+                <div class="archive-photo photo-1">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-5.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-photo photo-2">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-6.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-photo photo-3">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-7.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-photo photo-4">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-8.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-photo photo-5">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-9.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-photo photo-6">
+                    <div class="photo-inner">
+                        <img
+                            src="./assets/archive/archive-10.png"
+                            alt=""
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="archive-photo custom-meal-photo"
+                    id="customMealPhoto"
+                    hidden
+                >
+                    <div class="photo-inner custom-meal-inner">
+                        <img
+                            id="customMealImage"
+                            src=""
+                            alt="My meal"
+                            draggable="false"
+                        >
+                    </div>
+                </div>
+
+                <div class="archive-tag tag-memories">
+                    #memories
+                </div>
+
+                <div class="archive-tag tag-family">
+                    #family
+                </div>
+
+                <div class="archive-tag tag-meals">
+                    #meals
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="share-section" id="shareSection">
+
+            <h2 class="share-title">
+                Share your memories
+            </h2>
+
+            <div class="upload-layout">
+
+                <button
+                    class="upload-box"
+                    id="uploadBox"
+                    type="button"
+                >
+
+                    <svg
+                        class="upload-icon"
+                        viewBox="0 0 32 32"
+                        aria-hidden="true"
+                    >
+                        <path d="M16 21V7"></path>
+                        <path d="M10.5 12.5L16 7l5.5 5.5"></path>
+                        <path d="M7 19v6h18v-6"></path>
+                    </svg>
+
+                    <span class="upload-text">
+                        Drag &amp; drop your photos here or click to upload
+                    </span>
+
+                    <span class="upload-count" id="uploadCount">
+                        Up to 4 photos
+                    </span>
+
+                </button>
+
+                <input
+                    id="fileInput"
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    hidden
+                >
+
+                <div class="memory-grid">
+
+                    <button
+                        class="memory-slot"
+                        data-index="0"
+                        type="button"
+                    >
+                        <span class="slot-icon">
+                            <svg viewBox="0 0 20 20">
+                                <rect
+                                    x="2.5"
+                                    y="2.5"
+                                    width="15"
+                                    height="15"
+                                    rx="2"
+                                ></rect>
+                                <circle
+                                    cx="7"
+                                    cy="7"
+                                    r="1.5"
+                                ></circle>
+                                <path
+                                    d="M4.5 15l4-4 3 3 2-2 2.5 3"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <button
+                        class="memory-slot"
+                        data-index="1"
+                        type="button"
+                    >
+                        <span class="slot-icon">
+                            <svg viewBox="0 0 20 20">
+                                <rect
+                                    x="2.5"
+                                    y="2.5"
+                                    width="15"
+                                    height="15"
+                                    rx="2"
+                                ></rect>
+                                <circle
+                                    cx="7"
+                                    cy="7"
+                                    r="1.5"
+                                ></circle>
+                                <path
+                                    d="M4.5 15l4-4 3 3 2-2 2.5 3"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <button
+                        class="memory-slot"
+                        data-index="2"
+                        type="button"
+                    >
+                        <span class="slot-icon">
+                            <svg viewBox="0 0 20 20">
+                                <rect
+                                    x="2.5"
+                                    y="2.5"
+                                    width="15"
+                                    height="15"
+                                    rx="2"
+                                ></rect>
+                                <circle
+                                    cx="7"
+                                    cy="7"
+                                    r="1.5"
+                                ></circle>
+                                <path
+                                    d="M4.5 15l4-4 3 3 2-2 2.5 3"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <button
+                        class="memory-slot"
+                        data-index="3"
+                        type="button"
+                    >
+                        <span class="slot-icon">
+                            <svg viewBox="0 0 20 20">
+                                <rect
+                                    x="2.5"
+                                    y="2.5"
+                                    width="15"
+                                    height="15"
+                                    rx="2"
+                                ></rect>
+                                <circle
+                                    cx="7"
+                                    cy="7"
+                                    r="1.5"
+                                ></circle>
+                                <path
+                                    d="M4.5 15l4-4 3 3 2-2 2.5 3"
+                                ></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="share-bottom">
+
+                <button
+                    class="continue-btn"
+                    id="continueBtn"
+                    type="button"
+                >
+                    THE END
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="memory-modal" id="memoryModal">
+
+        <div
+            class="modal-backdrop"
+            data-close-modal
+        ></div>
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <div class="modal-preview">
+                <img
+                    id="modalImage"
+                    src=""
+                    alt="Memory preview"
+                >
+            </div>
+
+            <div class="modal-content">
+
+                <label for="memoryTitle">
+                    TITLE
+                </label>
+
+                <input
+                    id="memoryTitle"
+                    type="text"
+                    maxlength="60"
+                    placeholder="Give this memory a title"
+                >
+
+                <label for="memoryNote">
+                    NOTE
+                </label>
+
+                <textarea
+                    id="memoryNote"
+                    maxlength="300"
+                    placeholder="Write something about this memory..."
+                ></textarea>
+
+                <div class="modal-actions">
+
+                    <button
+                        class="modal-secondary"
+                        id="changePhotoBtn"
+                        type="button"
+                    >
+                        CHANGE PHOTO
+                    </button>
+
+                    <button
+                        class="modal-secondary"
+                        id="removePhotoBtn"
+                        type="button"
+                    >
+                        REMOVE
+                    </button>
+
+                    <button
+                        class="save-memory"
+                        id="saveMemoryBtn"
+                        type="button"
+                    >
+                        SAVE MEMORY
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section
+        class="memory-field"
+        id="memoryField"
+    >
+
+        <div class="field-controls">
+
+            <button
+                id="backArchiveBtn"
+                type="button"
+            >
+                ← ARCHIVE
+            </button>
+
+            <button
+                id="addMemoryBtn"
+                type="button"
+            >
+                + ADD MEMORY
+            </button>
+
+            <button
+                id="fieldContinueBtn"
+                type="button"
+            >
+                THE END
+            </button>
+
+        </div>
+
+        <div
+            class="floating-memories"
+            id="floatingMemories"
+        ></div>
+
+        <div class="yellow-glow yellow-glow-back"></div>
+        <div class="yellow-glow yellow-glow-front"></div>
+
+    </section>
+
+    <div class="viewer" id="viewer">
+
+        <div
+            class="viewer-backdrop"
+            data-close-viewer
+        ></div>
+
+        <div class="viewer-card">
+
+            <button
+                class="viewer-close"
+                id="viewerClose"
+                type="button"
+            >
+                ×
+            </button>
+
+            <img
+                id="viewerImage"
+                src=""
+                alt="Memory"
+            >
+
+            <div class="viewer-text">
+                <h3 id="viewerTitle"></h3>
+                <p id="viewerNote"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./archive.js"></script>
+
+</body>
+
+</html>

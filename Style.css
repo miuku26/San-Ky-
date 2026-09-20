@@ -1,0 +1,798 @@
+@font-face {
+    font-family: 'Lodestone';
+    src: url('./assets/fonts/iCielBC Lodestone.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'ZeroGothic';
+    src: url('./assets/fonts/ZeroGothic.woff2') format('woff2');
+    font-weight: 400 700;
+}
+
+@font-face {
+    font-family: 'StampaV2';
+    src: url('./assets/fonts/DFVN STAMPA V2.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'BVH Anto Plot Mono Trial';
+    src: url('./assets/fonts/BVHAntoPlotMonoTrial-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+:root {
+    --asset-scale: 1;
+    --journey-scale: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    overflow-x: hidden;
+    background: #F4D864;
+}
+
+button {
+    font: inherit;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #F4D864;
+    color: #312520;
+}
+
+.brand {
+    position: absolute;
+    left: 3.042%;
+    top: 4.073%;
+    z-index: 20;
+    display: flex;
+}
+
+.brand-text {
+    font-family: 'Lodestone', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.brand-cn {
+    font-family: 'ZeroGothic', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.nav-links {
+    position: absolute;
+    right: 3.042%;
+    top: 4.582%;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #312520;
+    text-decoration: none;
+    font-family: 'Lodestone', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.hero-kanji {
+    position: absolute;
+    left: 7.870%;
+    top: 17.515%;
+    font-family: 'ZeroGothic', sans-serif;
+    font-size: calc(128px * var(--asset-scale));
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-title-left {
+    position: absolute;
+    left: 8.466%;
+    top: 64.562%;
+    font-family: 'Lodestone', sans-serif;
+    font-size: calc(128px * var(--asset-scale));
+    font-weight: 400;
+    line-height: 1;
+}
+
+.hero-title-right {
+    position: absolute;
+    left: 81.349%;
+    top: 64.460%;
+    font-family: 'Lodestone', sans-serif;
+    font-size: calc(128px * var(--asset-scale));
+    font-weight: 400;
+    line-height: 1;
+}
+
+.scroll-hint {
+    position: absolute;
+    left: 50%;
+    top: 89.104%;
+    transform: translateX(-50%);
+    color: #000;
+    font-family: 'BVH Anto Plot Mono Trial', monospace;
+    font-size: calc(20px * var(--asset-scale));
+    font-weight: 400;
+    line-height: normal;
+    white-space: nowrap;
+    z-index: 20;
+    pointer-events: none;
+}
+
+#cursorTrail {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.trail-img {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--rotation)) scale(.82);
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+.trail-img.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--rotation)) scale(1);
+}
+
+.story-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #F4D864;
+    color: #312520;
+}
+
+.story-brand {
+    position: absolute;
+    left: 46px;
+    top: 40px;
+    display: flex;
+    z-index: 10;
+}
+
+.menu-btn,
+.memory-menu-btn {
+    position: absolute;
+    right: 71px;
+    top: 42px;
+    width: 36.67px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    z-index: 20;
+}
+
+.menu-btn span,
+.memory-menu-btn span {
+    position: absolute;
+    left: 0;
+    width: 36.67px;
+    height: 3px;
+    background: #312520;
+}
+
+.menu-btn span:nth-child(1),
+.memory-menu-btn span:nth-child(1) {
+    top: 0;
+}
+
+.menu-btn span:nth-child(2),
+.memory-menu-btn span:nth-child(2) {
+    top: 9.5px;
+}
+
+.menu-btn span:nth-child(3),
+.memory-menu-btn span:nth-child(3) {
+    top: 19px;
+}
+
+.story-content {
+    position: absolute;
+    left: 6.746%;
+    top: 45.112%;
+    width: 86.508%;
+}
+
+.story-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.story-stage.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.story-text {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-family: 'StampaV2', sans-serif;
+    font-size: calc(40px * var(--asset-scale));
+    font-weight: 400;
+    line-height: 1.2;
+    color: #312520;
+}
+
+.reveal-line {
+    clip-path: inset(0 100% 0 0);
+}
+
+#questionStage .reveal-line {
+    clip-path: inset(0);
+}
+
+#seatStage.active .reveal-line,
+#discoverStage.active .reveal-line {
+    animation: textReveal 3.5s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes textReveal {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0);
+    }
+}
+
+.start-btn {
+    position: absolute;
+    left: 50%;
+    top: calc(124px * var(--asset-scale));
+    width: calc(270px * var(--asset-scale));
+    height: calc(78px * var(--asset-scale));
+    padding: 0;
+    border: 0;
+    background: transparent;
+    transform: translate(-50%, 10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    cursor: pointer;
+    transition:
+        opacity 1.35s ease,
+        transform 1.35s cubic-bezier(.22, 1,.36, 1);
+}
+
+.start-btn.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+.start-btn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.memory-screen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #fffdfd 0%,
+            #fffafa 42%,
+            #fdf5f6 72%,
+            #faeeee 100%
+        );
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .7s ease;
+}
+
+.memory-screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.memory-screen.leave {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.memory-brand {
+    position: absolute;
+    left: 46px;
+    top: 40px;
+    display: flex;
+    z-index: 10;
+}
+
+.memory-message {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(14px);
+    transition:
+        opacity .75s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s linear .75s;
+}
+
+.memory-message.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+        opacity .75s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s;
+}
+
+.memory-text {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    background: #F6F6F6;
+    outline: 4px solid #000;
+    outline-offset: -2px;
+    padding: 10px;
+    font-family: 'BVH Anto Plot Mono Trial', monospace;
+    font-size: calc(20px * var(--asset-scale));
+    font-weight: 400;
+    line-height: normal;
+}
+
+.memory-message-1 {
+    left: 10.251%;
+    top: 31.161%;
+    width: calc(732px * var(--asset-scale));
+    height: calc(95px * var(--asset-scale));
+}
+
+.memory-text-1 {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.memory-message-2 {
+    left: 46.693%;
+    top: 40.835%;
+    width: calc(698px * var(--asset-scale));
+    height: calc(90px * var(--asset-scale));
+}
+
+.memory-text-2 {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.memory-message-3 {
+    left: 28.241%;
+    top: 36.762%;
+    width: calc(658px * var(--asset-scale));
+    height: calc(100px * var(--asset-scale));
+}
+
+.memory-text-3 {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.memory-scroll-hint {
+    position: absolute;
+    left: 50%;
+    top: 89.104%;
+    transform: translate(-50%, 12px);
+    color: #000;
+    font-family: 'BVH Anto Plot Mono Trial', monospace;
+    font-size: calc(20px * var(--asset-scale));
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s linear .8s;
+}
+
+.memory-scroll-hint.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        visibility 0s;
+}
+
+.journey-section {
+    position: relative;
+    width: 100%;
+    height: calc(8585px * var(--journey-scale));
+    background:
+        radial-gradient(
+            ellipse at center,
+            #fffdfd 0%,
+            #fffafa 42%,
+            #fdf5f6 72%,
+            #faeeee 100%
+        );
+    overflow: hidden;
+}
+
+.journey-canvas {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1512px;
+    height: 8585px;
+    background:
+        radial-gradient(
+            ellipse at center,
+            #fffdfd 0%,
+            #fffafa 42%,
+            #fdf5f6 72%,
+            #faeeee 100%
+        );
+    transform: translateX(-50%) scale(var(--journey-scale));
+    transform-origin: top center;
+}
+
+.journey-header {
+    position: absolute;
+    left: 46px;
+    top: 40px;
+    display: flex;
+    z-index: 50;
+}
+
+.journey-header .brand-text {
+    font-size: 24px;
+}
+
+.journey-header .brand-cn {
+    font-size: 24px;
+}
+
+.journey-menu {
+    position: absolute;
+    left: 1404px;
+    top: 42px;
+    width: 36.67px;
+    height: 22px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    z-index: 50;
+}
+
+.journey-menu span {
+    position: absolute;
+    left: 0;
+    width: 36.67px;
+    height: 3px;
+    background: #000;
+}
+
+.journey-menu span:nth-child(1) {
+    top: 0;
+}
+
+.journey-menu span:nth-child(2) {
+    top: 9.5px;
+}
+
+.journey-menu span:nth-child(3) {
+    top: 19px;
+}
+
+.curve-frame {
+    position: absolute;
+    left: 0;
+    top: 270px;
+    width: 1512px;
+    height: auto;
+    display: block;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.journey-text {
+    position: absolute;
+    display: block;
+    z-index: 30;
+}
+
+.long-ban {
+    position: absolute;
+    left: 787px;
+    top: 891px;
+    width: 642px;
+    height: 409px;
+    display: block;
+    object-fit: contain;
+    z-index: 10;
+}
+
+.kitchen-scene {
+    position: absolute;
+    left: 0;
+    top: 2144px;
+    width: 1512px;
+    height: 1367px;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.kitchen-reveal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1512px;
+    height: 1367px;
+    cursor: crosshair;
+    pointer-events: auto;
+}
+
+.kitchen-source {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.kitchen-canvas,
+.kitchen-wall {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1512px;
+    height: 1367px;
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.kitchen-canvas {
+    z-index: 1;
+}
+
+.kitchen-wall {
+    z-index: 2;
+}
+
+.journey-text-2 {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(18px);
+    filter: blur(2px);
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1),
+        filter .8s ease;
+}
+
+.journey-text-2.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.food {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    z-index: 20;
+}
+
+.food-bowl {
+    left: 107px;
+    top: 4293px;
+    width: 397px;
+    height: 220px;
+}
+
+.food-chopsticks {
+    left: 265px;
+    top: 4804px;
+    width: 516px;
+    height: 149px;
+}
+
+.food-plate {
+    left: 825px;
+    top: 4487px;
+    width: 579px;
+    height: 215px;
+}
+
+.food-jar {
+    left: 162px;
+    top: 5377px;
+    width: 288px;
+    height: 442px;
+}
+
+.album-open {
+    position: absolute;
+    left: 822.98px;
+    top: 6173px;
+    width: 589.26px;
+    height: 380.79px;
+    display: block;
+    object-fit: contain;
+    transform: rotate(13deg);
+    transform-origin: top left;
+    z-index: 20;
+}
+
+.album-cover {
+    position: absolute;
+    left: 495px;
+    top: 7233px;
+    width: 604px;
+    height: auto;
+    display: block;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.album-title {
+    position: absolute;
+    left: 748px;
+    top: 7420px;
+    color: rgba(236, 222, 178, 0.57);
+    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    font-size: 118px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -5px;
+    white-space: nowrap;
+    z-index: 25;
+    pointer-events: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.story-frame {
+    position: absolute;
+    width: 698px;
+    z-index: 45;
+    pointer-events: none;
+}
+
+.story-frame img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+}
+
+.story-frame p {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    margin: 0;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'BVH Anto Plot Mono Trial', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #000;
+}
+
+.story-frame-1 {
+    left: 191px;
+    top: 655px;
+    width: 698px;
+    height: 65px;
+}
+
+.story-frame-2 {
+    left: 756px;
+    top: 2642px;
+    width: 698px;
+    height: 90px;
+}
+
+.story-frame-3 {
+    left: 99px;
+    top: 7040px;
+    width: 698px;
+    height: 90px;
+}
+
+.story-frame-4 {
+    left: 756px;
+    top: 7655px;
+    width: 698px;
+    height: 90px;
+}
+.album-cover {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+ }
+ .story-frame-4 {
+    pointer-events: none;
+}
+
+.album-cover {
+    cursor: pointer;
+    pointer-events: auto;
+}  

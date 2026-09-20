@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prototype 1990</title>
+  <link rel="stylesheet" href="1990.css" />
+</head>
+<body>
+  <div class="canvas">
+    <!-- Nền Stack Background -->
+<img class="bg-img img-bg-1" src="./image 1990/nền2.png" alt="BG 1" />
+<img class="bg-img img-bg-2" src="./image 1990/nền2.png" alt="BG 2" />
+<img class="bg-img img-bg-3" src="./image 1990/nền2.png" alt="BG 3" />
+<img class="bg-img img-bg-4" src="./image 1990/nền2.png" alt="BG 4" />
+<img class="bg-img img-bg-5" src="./image 1990/nền2.png" alt="BG 5" />
+<img class="bg-img img-bg-6" src="./image 1990/nền2.png" alt="BG 6" />
+<img class="bg-img img-bg-7" src="./image 1990/nền2.png" alt="BG 7" />
+<img class="bg-img img-bg-8" src="./image 1990/nền2.png" alt="BG 8" />
+<img class="bg-img img-bg-9" src="./image 1990/nền2.png" alt="BG 9" />
+
+    <!-- Tiêu đề 1990 -->
+    <div class="text-1990">1990</div>
+
+    <div class="brand-san">San </div>
+    <div class="brand-kanji-1">餐</div>
+    <div class="brand-kanji-2">餐</div>
+
+    <!-- Menu Hamburger -->
+    <div class="menu-icon-btn" id="menuBtn" data-property-1="Default">
+      <div class="menu-line line-1"></div>
+      <div class="menu-line line-2"></div>
+      <div class="menu-line line-3"></div>
+    </div>
+
+    <!-- Các hình ảnh trang trí Hero Section & Dialogue Popups -->
+    <img class="fg-img img-fg-1" src="./image 1990/bàn 2.png" alt="FG 1" />
+    <!-- Ảnh Mì Miliket & Dialogue Popup -->
+    <img class="fg-img img-fg-2 clickable-item" src="./image 1990/miliket.png" alt="Miliket Noodles" />
+    <img class="dish-popup popup-miliket" src="./image 1990/thoaimili.png" alt="Miliket Dialogue" />
+
+    <!-- Ảnh Canh Sấu & Dialogue Popup -->
+    <img class="fg-img img-fg-3 clickable-item" src="./image 1990/canhsau.png" alt="Mixed Green Veggies Soup" />
+    <img class="dish-popup popup-canhsau" src="./image 1990/thoairm.png" alt="Canh Sau Dialogue" />
+
+    <!-- Ảnh Cà Pháo Muối & Dialogue Popup -->
+    <img class="fg-img img-fg-4 clickable-item" src="./image 1990/caphaomuoi.png" alt="Pickled Eggplant" />
+    <img class="dish-popup popup-caphao" src="./image 1990/thoaicp.png" alt="Ca Phao Dialogue" />
+
+    <!-- Ảnh Rau Muống Luộc & Dialogue Popup -->
+    <img class="fg-img img-fg-5 clickable-item" src="./image 1990/raumuongluoc.png" alt="Morning Glory" />
+    <img class="dish-popup popup-raumuong" src="./image 1990/thoairm.png" alt="Rau Muong Dialogue" />
+
+    <!-- Ảnh Tép Rang & Dialogue Popup -->
+    <img class="fg-img img-fg-6 clickable-item" src="./image 1990/teprang.png" alt="Fried Tiny Shrimp" />
+    <img class="dish-popup popup-teprang" src="./image 1990/thoaitr.png" alt="Tep Rang Dialogue" />
+
+    <!-- Ảnh Cá Rô Rán & Dialogue Popup -->
+    <img class="fg-img img-fg-7 clickable-item" src="./image 1990/caroran.png" alt="Fried Climbing Perch" />
+    <img class="dish-popup popup-caroran" src="./image 1990/thoaicr.png" alt="Ca Ro Ran Dialogue" />
+
+    <!-- Ảnh Thịt Ba Chỉ Kho Tiêu & Dialogue Popup -->
+    <img class="fg-img img-fg-8 clickable-item" src="./image 1990/thitbachikhotieu.png" alt="Braised Pork Belly" />
+    <img class="dish-popup popup-thitkho" src="./image 1990/thoaitbk.png" alt="Thit Kho Dialogue" />
+
+    <img class="fg-img img-fg-9" src="./image 1990/batcom.png" alt="FG 9" />
+
+    <!-- Nội dung văn bản câu chuyện -->
+    <div class="story-text text-at-7pm scroll-reveal">At 7 p.m, the whole family turns on the TV.</div>
+    <div class="story-text text-tv-show scroll-reveal">Our favourite TV show is just starting</div>
+    <div class="story-text text-mom-kitchen scroll-reveal">Mom heads to the kitchen to prepare dinner</div>
+    <div class="story-text text-help-mom scroll-reveal">“Come on, you two, help Mom get the bowls and chopsticks ready.”</div>
+    <div class="story-text text-rice-boil scroll-reveal">The rice starts to boil</div>
+    <div class="story-text text-food-smell scroll-reveal">The smell of food fills the house</div>
+    <div class="story-text text-dinners-ready scroll-reveal">“Dinner’s almost ready"</div>
+    <div class="story-text text-help-sister scroll-reveal">I help my sister set the bowls and chopsticks on the table</div>
+    <div class="story-text text-dad-tv scroll-reveal">Dad turns off the TV</div>
+    <div class="story-text text-gather scroll-reveal">We all gather around the dinner table</div>
+    <div class="story-text text-simple-meal scroll-reveal">Just a simple family meal</div>
+    <div class="story-text text-warm-comfort scroll-reveal">But somehow, it feel warm and comforting.</div>
+
+    <!-- Hình ảnh minh họa các phân đoạn -->
+    <img class="mid-img img-mid-1" id="tvFrame" src="./image 1990/tv.png" alt="Mid 1" />
+    <img src="./images/icon.png" alt="Click hint" class="click-icon-tv" id="clickIcontv" />
+    <img class="mid-img img-mid-2" id="tvScreen" src="./image 1990/tvscreen.png" alt="Mid 2" />
+    <video class="mid-img img-mid-2 tv-video" id="tvVideo" src="./image 1990/chuongtrinhtv.mp4" loop playsinline></video>
+    
+    <div class="hover-container">
+      <img class="mid-img img-mid-3 original-img" src="./image 1990/me nau com.png" alt="Mid 3" />
+      <div class="halftone-overlay"></div>
+    </div>
+
+    <img class="mid-img img-mid-4" src="./image 1990/xoi com.png" alt="Mid 4" />
+    <img class="mid-img img-mid-5" src="./image 1990/doncom.png" alt="Mid 5" />
+    <img class="mid-img img-mid-6" src="./image 1990/cbian(trang).png" alt="Mid 6" />
+    <img class="mid-img img-mid-6-den" id="imgMid6Den" src="./image 1990/cbian(den).png" alt="Mid 6 Dark" />
+    <img class="mid-img img-mid-7" src="./image 1990/giadinh 19990.png" alt="Mid 7" />
+
+    <!-- Nút tương tác cuối trang -->
+    <a href="1975.html" class="back-btn-link">
+      <img src="./images/back.png" alt="Back to 1975" class="back-btn-img" />
+    </a>
+
+    <a href="2025.html" class="next-button-link">
+      <img src="./images/next.png" alt="Go to 1990" class="next-btn-img" />
+    </a>
+  </div>
+  <!-- Custom Cursor Reveal Box -->
+  <div class="reveal-cursor-box" id="revealCursorBox"></div>
+
+  <!-- Modal Chi Tiết Mì Miliket -->
+  <div id="miliket-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-mili-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-mili-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-mili-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-mili-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-mili-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-mili-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-mili-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-mili-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-mili-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="miliket-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-mili-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-mili-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-mili-item-img" src="./image 1990/miliket.png" alt="" />
+      <img class="m-mili-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <div class="m-mili-plus-sign">+</div>
+      <img class="m-mili-detail-1" src="./image 1990/egg 1.png" alt="" />
+      <img class="m-mili-detail-2" src="./image 1990/potato.png" alt="" />
+      <div class="m-mili-title">MILIKET NOODLES</div>
+      <img class="m-mili-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-mili-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-mili-quote">
+        “The noodles are ready, girls. Eat them while they’re still nice and soft, before they get soggy.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Canh Sấu -->
+  <div id="canhsau-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-cs-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-cs-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-cs-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-cs-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-cs-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-cs-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-cs-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-cs-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-cs-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="canhsau-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-cs-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-cs-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-cs-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-cs-item-img" src="./image 1990/canhsau.png" alt="Mixed Green Veggies Soup" />
+      <div class="m-cs-plus-sign">+</div>
+      <img class="m-cs-detail-1" src="./image 1990/sau 1.png" alt="" />
+      <img class="m-cs-detail-2" src="./images/salt.png" alt="" />
+      <img class="m-cs-detail-3" src="./image 1990/ot 1.png" alt="" />
+      <div class="m-cs-title">WATER SPINACH SOUP</div>
+      <img class="m-cs-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-cs-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-cs-quote">
+        “Keep the sour soup nice and mild. It’ll be easier for the little ones to eat, too.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Cà Pháo Muối -->
+  <div id="caphao-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-cp-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-cp-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-cp-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-cp-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-cp-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-cp-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-cp-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-cp-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-cp-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="caphao-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-cp-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-cp-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-cp-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-cp-item-img" src="./image 1990/caphaomuoi.png" alt="Pickled Eggplant" />
+      <div class="m-cp-plus-sign">+</div>
+      <img class="m-cp-detail-1" src="./image 1990/caphaoicon 1.png" alt="" />
+      <img class="m-cp-detail-2" src="./images/salt.png" alt="" />
+      <img class="m-cp-detail-3" src="./image 1990/ot 1.png" alt="" />
+      <div class="m-cp-title">PICKLED EGGPLANT</div>
+      <img class="m-cp-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-cp-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-cp-quote-1">
+        “Let the eggplant dry out a little first then pickle it. That’s how you get it nice and crisp.”
+      </div>
+      <div class="m-cp-quote-2">
+        “Keep this jar for later. On days when you don’t have time to cook many dishes, just take some out and have it with your rice.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Rau Muống Luộc -->
+  <div id="raumuong-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-rm-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-rm-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-rm-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-rm-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-rm-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-rm-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-rm-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-rm-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-rm-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="raumuong-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-rm-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-rm-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-rm-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-rm-item-img" src="./image 1990/raumuongluoc.png" alt="Morning Glory" />
+      <div class="m-rm-plus-sign">+</div>
+      <img class="m-rm-detail-1" src="./image 1990/raumuong2 1.png" alt="" />
+      <div class="m-rm-title">BOILED MORNING GLORY</div>
+      <img class="m-rm-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-rm-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-rm-quote">
+        “Just boil the morning glory until it’s done, dear, so it stays green and crisp.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Tép Rang -->
+  <div id="teprang-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-tr-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-tr-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-tr-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-tr-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-tr-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-tr-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-tr-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-tr-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-tr-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="teprang-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-tr-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-tr-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-tr-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-tr-item-img" src="./image 1990/teprang.png" alt="Fried Tiny Shrimp" />
+      <div class="m-tr-plus-sign">+</div>
+      <img class="m-tr-detail-1" src="./image 1990/tep 3.png" alt="" />
+      <img class="m-tr-detail-2" src="./image 1990/tep 3.png" alt="" />
+      <img class="m-tr-detail-3" src="./image 1990/hanh icon 1 (3).png" alt="" />
+      <img class="m-tr-detail-4" src="./images/salt.png" alt="" />
+      <img class="m-tr-detail-5" src="./image 1990/nuoc mam 1 (1).png" alt="" />
+      <div class="m-tr-title">FRIED TINY SHRIMP</div>
+      <img class="m-tr-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-tr-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-tr-quote-1">
+        “Add just a little sugar. It’ll give the shrimp a lovely color when they’re fried.”
+      </div>
+      <div class="m-tr-quote-2">
+        “Cook them a little drier like this. They’ll keep well and still taste good for the next meal.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Cá Rô Rán -->
+  <div id="caroran-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-cro-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-cro-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-cro-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-cro-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-cro-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-cro-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-cro-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-cro-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-cro-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="caroran-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-cro-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-cro-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-cro-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-cro-item-img" src="./image 1990/caroran.png" alt="Fried Climbing Perch" />
+      <div class="m-cro-plus-sign">+</div>
+      <img class="m-cro-detail-1" src="./image 1990/caro 1.png" alt="" />
+      <img class="m-cro-detail-2" src="./image 1990/dau an 1.png" alt="" />
+      <div class="m-cro-title">FRIED CLIMBING PERCH</div>
+      <img class="m-cro-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-cro-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-cro-quote-1">
+        “Make sure the fish is dry before you put it in the pan, child. Otherwise, the oil will splatter.”
+      </div>
+      <div class="m-cro-quote-2">
+        “Fry it till it’s nice and golden. It’ll be best with a bowl of hot rice.”
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Chi Tiết Thịt Ba Chỉ Kho Tiêu -->
+  <div id="thitkho-modal" class="modal-overlay">
+    <div class="modal-container">
+      <img class="m-tbk-bg-1" src="./image 1990/nền2.png" alt="" />
+      <img class="m-tbk-bg-2" src="./image 1990/bàn 2.png" alt="" />
+      <img class="m-tbk-fg-miliket" src="./image 1990/miliket.png" alt="" />
+      <img class="m-tbk-fg-canhsau" src="./image 1990/canhsau.png" alt="" />
+      <img class="m-tbk-fg-caphao" src="./image 1990/caphaomuoi.png" alt="" />
+      <img class="m-tbk-fg-raumuong" src="./image 1990/raumuongluoc.png" alt="" />
+      <img class="m-tbk-fg-teprang" src="./image 1990/teprang.png" alt="" />
+      <img class="m-tbk-fg-caroran" src="./image 1990/caroran.png" alt="" />
+      <img class="m-tbk-fg-thitkho" src="./image 1990/thitbachikhotieu.png" alt="" />
+      <div class="modal-blur-bg"></div>
+      <img class="modal-close-btn" id="thitkho-modal-close-btn" src="./images/x.png" alt="Close" />
+      <img class="m-tbk-card-bg" src="./image 1990/storycard 4.png" alt="" />
+      <img class="m-tbk-card-shadow" src="./images/white strcard.png" alt="" />
+      <img class="m-tbk-card-clip" src="./image 1990/clipper2.png" alt="" />
+      <img class="m-tbk-item-img" src="./image 1990/thitbachikhotieu.png" alt="Braised Pork Belly" />
+      <div class="m-tbk-plus-sign">+</div>
+      <img class="m-tbk-detail-1" src="./image 1990/thitbachi 1.png" alt="" />
+      <img class="m-tbk-detail-2" src="./image 1990/hanh icon 1 (3).png" alt="" />
+      <img class="m-tbk-detail-3" src="./image 1990/tieu den 1.png" alt="" />
+      <img class="m-tbk-detail-4" src="./image 1990/đường 1.png" alt="" />
+      <div class="m-tbk-title">BRAISED PORK BELLY</div>
+      <img class="m-tbk-tag-mom" src="./image 1990/frame mom.png" alt="mom" />
+      <img class="m-tbk-tag-ingredient" src="./images/frame ingredient.png" alt="Ingredient" />
+      <div class="m-tbk-quote-1">
+        “This one’s got a good bit of lean and fat together. Let it braise slowly, it’ll come out tender and smell wonderful.”
+      </div>
+      <div class="m-tbk-quote-2">
+        “Go easy on the seasoning, child. We’ll have this braised pork for dinner tonight and tomorrow.”
+      </div>
+    </div>
+  </div>
+
+  <script src="1990.js"></script>
+</body>
+</html>

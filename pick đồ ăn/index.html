@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Your Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section class="question-intro" id="questionIntro">
+
+    <header class="question-header">
+
+      <div class="brand-button">
+        <div class="brand">
+          <span class="brand-san">San </span>
+          <span class="brand-cn">餐</span>
+        </div>
+      </div>
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </header>
+
+    <div
+      class="question-page question-page-one active"
+      id="questionOne"
+    >
+
+      <div class="question-text">
+        IF YOU COULD PLACE SOMETHING ON THE TABLE<br>
+        THAT REMINDS YOU OF YOUR FAMILY...
+      </div>
+
+    </div>
+
+    <div
+  class="question-page question-page-two"
+  id="questionTwo"
+>
+
+  <div class="question-text">
+    WHAT WOULD YOU PUT THERE?
+  </div>
+
+  <div class="question-scroll-hint">
+    SCROLL TO CONTINUE
+    <span class="question-scroll-arrow">↓</span>
+  </div>
+
+</div>
+
+</section>
+
+<main class="meal-app" id="mealApp">
+
+  <header class="header">
+
+    <div class="brand-button">
+      <div class="brand">
+        <span class="brand-san">San </span>
+        <span class="brand-cn">餐</span>
+      </div>
+    </div>
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </header>
+
+    <section class="meal-board">
+
+      <div id="workspace" class="workspace"></div>
+
+      <button
+        id="saveBtn"
+        class="save-button"
+        type="button"
+      >
+        SAVE
+      </button>
+
+    </section>
+
+    <nav class="categories">
+
+      <button
+        class="category active"
+        type="button"
+        data-category="food"
+      >
+        FOOD
+      </button>
+
+      <button
+        class="category"
+        type="button"
+        data-category="materials"
+      >
+        MATERIALS
+      </button>
+
+      <button
+        class="category"
+        type="button"
+        data-category="table"
+      >
+        TABLE
+      </button>
+
+      <button
+        class="category"
+        type="button"
+        data-category="other"
+      >
+        OTHER
+      </button>
+
+    </nav>
+
+    <section class="asset-panel">
+
+      <button
+        id="scrollLeft"
+        class="scroll-button scroll-left"
+        type="button"
+      >
+        ‹
+      </button>
+
+      <div
+        id="assetScroller"
+        class="asset-scroller"
+      >
+        <div
+          id="assetList"
+          class="asset-list"
+        ></div>
+      </div>
+
+      <button
+        id="scrollRight"
+        class="scroll-button scroll-right"
+        type="button"
+      >
+        ›
+      </button>
+
+    </section>
+
+    <button
+      id="undoBtn"
+      class="undo-button"
+      type="button"
+    >
+      <span class="undo-arrow">↶</span>
+    </button>
+
+    <div
+      id="saveMessage"
+      class="save-message"
+    >
+      SAVED!
+    </div>
+
+  </main>
+
+  <div
+    id="cameraFlash"
+    class="camera-flash"
+  ></div>
+
+  <div
+    id="photoPreview"
+    class="photo-preview"
+  >
+    <img
+      id="photoPreviewImage"
+      alt="Ảnh bàn ăn"
+    >
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+  ></script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

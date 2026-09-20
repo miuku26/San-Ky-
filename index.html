@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAN Ký</title>
+    <link rel="stylesheet" href="./Style.css">
+</head>
+
+<body>
+
+    <section class="hero" id="heroSection">
+
+        <div class="brand">
+            <span class="brand-text">San</span>
+            <span class="brand-cn">餐</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#">Archive</a>
+            <a href="#">About</a>
+            <a href="#">Eng/vie</a>
+        </nav>
+
+        <div class="hero-kanji">餐</div>
+
+        <div class="hero-title-left">SAN</div>
+
+        <div class="hero-title-right">KÝ</div>
+
+        <div class="scroll-hint">
+            [Scroll to explore]
+        </div>
+
+        <div id="cursorTrail"></div>
+
+    </section>
+
+
+    <section class="story-screen" id="storyScreen">
+
+        <div class="story-brand">
+            <span class="brand-text">San</span>
+            <span class="brand-cn">餐</span>
+        </div>
+
+        <button class="menu-btn" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="story-content">
+
+            <div class="story-stage active" id="questionStage">
+
+                <p class="story-text reveal-line">
+                    WHEN WAS THE LAST TIME YOU HAD A FAMILY MEAL WITH EVERYONE TOGETHER?
+                </p>
+
+            </div>
+
+            <div class="story-stage" id="seatStage">
+
+                <p class="story-text reveal-line">
+                    Take a seat
+                </p>
+
+            </div>
+
+            <div class="story-stage" id="discoverStage">
+
+                <p class="story-text reveal-line">
+                    Let's dIscover IT together
+                </p>
+
+                <button
+                    class="start-btn"
+                    id="startButton"
+                    type="button"
+                >
+
+                    <img
+                        id="startButtonImage"
+                        src="./assets/button/START.png"
+                        alt="START"
+                    >
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="memory-screen" id="memoryScreen">
+
+        <div class="memory-brand">
+            <span class="brand-text">San</span>
+            <span class="brand-cn">餐</span>
+        </div>
+
+        <button class="memory-menu-btn" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <div
+            class="memory-message memory-message-1"
+            id="memoryMessage1"
+        >
+
+            <div class="memory-text memory-text-1">
+                The soft clinking of bowls and chopsticks can be heard
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory-message memory-message-2"
+            id="memoryMessage2"
+        >
+
+            <div class="memory-text memory-text-2">
+                They live around the dining table, in the meals we share with the people we love
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory-message memory-message-3"
+            id="memoryMessage3"
+        >
+
+            <div class="memory-text memory-text-3">
+                Some memories are not found in big moments
+            </div>
+
+        </div>
+
+
+        <div
+            class="memory-scroll-hint"
+            id="memoryScrollHint"
+        >
+            [Scroll to explore]
+        </div>
+
+    </section>
+
+
+    <section
+        class="journey-section"
+        id="journeySection"
+    >
+
+        <div class="journey-canvas">
+
+
+            <div class="journey-header">
+
+                <span class="brand-text">
+                    San
+                </span>
+
+                <span class="brand-cn">
+                    餐
+                </span>
+
+            </div>
+
+
+            <button
+                class="journey-menu"
+                type="button"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <img
+                class="curve-frame"
+                src="./assets/story/curve.svg"
+                alt=""
+            >
+
+
+            <div class="story-frame story-frame-1">
+
+                <img
+                    src="./assets/story/frame.png"
+                    alt=""
+                >
+
+                <p>
+                    I used to think memories lived in photos
+                </p>
+
+            </div>
+
+
+            <img
+                class="long-ban"
+                src="./assets/story/album-photo.png"
+                alt=""
+            >
+
+
+            <div
+                class="kitchen-scene"
+                id="kitchenScene"
+            >
+
+                <div
+                    class="kitchen-reveal"
+                    id="kitchenReveal"
+                >
+
+                    <img
+                        src="./assets/story/kitchen.png"
+                        class="kitchen-source"
+                        id="kitchenSource"
+                        alt=""
+                    >
+
+                    <canvas
+                        id="kitchenCanvas"
+                        class="kitchen-canvas"
+                    ></canvas>
+
+                    <img
+                        src="./assets/story/kitchen-front.png"
+                        class="kitchen-wall"
+                        alt=""
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="story-frame story-frame-2 journey-text-2"
+                id="journeyText2"
+            >
+
+                <img
+                    src="./assets/story/frame.png"
+                    alt=""
+                >
+
+                <p>
+                    Later, I found them in a simple bowl, a pair of chopsticks,
+                    or a familiar dish on the table
+                </p>
+
+            </div>
+
+
+            <img
+                class="food food-bowl"
+                src="./assets/story/bowl.png"
+                alt=""
+            >
+
+
+            <img
+                class="food food-plate"
+                src="./assets/story/plate.png"
+                alt=""
+            >
+
+
+            <img
+                class="food food-chopsticks"
+                src="./assets/story/chopsticks.png"
+                alt=""
+            >
+
+
+            <img
+                class="food food-jar"
+                src="./assets/story/salt-jar.png"
+                alt=""
+            >
+
+
+            <img
+                class="album-open"
+                src="./assets/story/food-cover.png"
+                alt=""
+            >
+
+
+            <div class="story-frame story-frame-3">
+
+                <img
+                    src="./assets/story/frame.png"
+                    alt=""
+                >
+
+                <p>
+                    I found an old album that holds the family meals
+                    shared across generations
+                </p>
+
+            </div>
+
+
+           <img 
+    class="album-cover"
+    id="openAlbum"
+    src="./assets/story/album.png" 
+    alt="" 
+>
+
+
+        
+
+
+            <div class="story-frame story-frame-4">
+
+                <img
+                    src="./assets/story/frame.png"
+                    alt=""
+                >
+
+                <p>
+                    And it all begins with the very first meal
+                    my grandmother cooked
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

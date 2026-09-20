@@ -1,0 +1,1526 @@
+@font-face {
+  font-family: 'iCielBC Lodestone';
+  src: url('./fonts/iCielBC Lodestone.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DFPLiHei-Bd';
+  src: url('./fonts/DFPLiHei-Bd.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'ZeroGothic';
+  src: url('./fonts/ZeroGothic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'BVH Anto Plot Mono Trial';
+  src: url('./fonts/BVHAntoPlotMonoTrial-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DFVN STAMPA V2';
+  src: url('./fonts/DFVN STAMPA V2.woff2') format('woff2');
+}
+
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #B6EEE4;
+  overflow-x: hidden;
+}
+
+/* Khung chứa canvas tổng */
+.canvas {
+  width: 100%;
+  height: 10734px;
+  position: relative;
+  background: #B6EEE4;
+  overflow: hidden;
+}
+
+.bg-img,
+.fg-img,
+.mid-img {
+  position: absolute;
+}
+
+.brand-san {
+  left: 46px;
+  top: 42px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: 'iCielBC Lodestone', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.brand-kanji-1,
+.brand-kanji-2 {
+  left: 84px;
+  top: 40px;
+  position: absolute;
+  color: black;
+  font-size: 24px;
+  font-family: 'ZeroGothic', sans-serif;
+  font-weight: 550;
+  word-wrap: break-word;
+}
+
+/* Định dạng các ảnh nền cuộn */
+.img-bg-1 { width: 1600px; height: 1200px; left: 0px; top: 0px; }
+.img-bg-2 { width: 1600px; height: 1200px; left: -44px; top: 1134px; }
+.img-bg-3 { width: 1600px; height: 1200px; left: -44px; top: 2334px; }
+.img-bg-4 { width: 1600px; height: 1200px; left: -44px; top: 3534px; }
+.img-bg-5 { width: 1600px; height: 1200px; left: -44px; top: 4734px; }
+.img-bg-6 { width: 1600px; height: 1200px; left: -44px; top: 5934px; }
+.img-bg-7 { width: 1600px; height: 1200px; left: -44px; top: 7134px; }
+.img-bg-8 { width: 1600px; height: 1200px; left: -44px; top: 8334px; }
+.img-bg-9 { width: 1600px; height: 1200px; left: 3px; top: 9534px; }
+
+/* Định dạng các ảnh đè Hero Section */
+.img-fg-1 { width: 1479px; height: 1109px; left: 16px; top: 1026px; }
+.img-fg-2 {
+  width: 254.53;
+  height: 355.06px;
+  left: 908.51px;
+  top: 1310.68px;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+.img-fg-3 {
+  width: 359px;
+  height: 368px;
+  left: 635px;
+  top: 1596px;
+}
+.img-fg-4 { width: 230px; height: 218px; left: 504px; top: 1487px; }
+.img-fg-5 { width: 332px; height: 341px; left: 900px; top: 1379px; }
+.img-fg-6 { width: 361px; height: 326px; left: 235px; top: 1581px; }
+.img-fg-7 {
+  width: 569px;
+  height: 334px;
+  left: 60px;
+  top: 1330.87px;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+.img-fg-8 { width: 315px; height: 315px; left: 645px; top: 1250px; }
+.img-fg-9 { width: 182px; height: 185px; left: 994px; top: 1705px; }
+
+/* Interactive Click Hover Effect */
+.clickable-item {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.img-fg-2.clickable-item:hover {
+  transform: rotate(-56deg) scale(1.05);
+}
+
+.img-fg-3.clickable-item:hover,
+.img-fg-4.clickable-item:hover,
+.img-fg-5.clickable-item:hover,
+.img-fg-6.clickable-item:hover,
+.img-fg-8.clickable-item:hover {
+  transform: scale(1.05);
+}
+.img-fg-7.clickable-item:hover {
+  transform: rotate(-18deg) scale(1.05);
+}
+/* Các hình ảnh giữa trang */
+.img-mid-1 { width: 1075px; height: 729px; left: 235px; top: 2744px; }
+.img-mid-2 { width: 712px; height: 562px; left: 310px; top: 2828px; }
+.img-mid-1,
+.img-mid-2,
+.tv-video {
+  cursor: pointer;
+}
+
+.tv-video {
+  position: absolute;
+  width: 685px;
+  height: 520px;
+  left: 322px;
+  top: 2848px;
+  object-fit: cover;
+  display: none;
+  z-index: 10;
+  border-radius: 55px;
+}
+
+.click-icon-tv {
+  position: absolute;
+  top: 3006px;
+  left: 1165px;
+  width: 134px;
+  height: 133px;
+  z-index: 20;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: clickFlicker 1s infinite alternate ease-in-out;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Flicker & pulse animation */
+@keyframes clickFlicker {
+  0% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+
+.img-mid-3 { width: 1066px; height: 1055px; left: 16px; top: 3947px; }
+.img-mid-4 { width: 840px; height: 754px; left: 621px; top: 5313px; }
+.img-mid-5 { width: 1131px; height: 814px; left: 190px; top: 6644px; }
+.img-mid-6 { width: 1535px; height: 1151px; left: -12px; top: 7919px; }
+.img-mid-7 { width: 1309px; height: 781px; left: 101px; top: 9487px; }
+
+/* Font tiêu đề 1990 */
+.text-1990 {
+  left: 553px;
+  top: 396px;
+  position: absolute;
+  color: #074154;
+  font-size: 180px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Logo */
+.logo-container {
+  left: 46px;
+  top: 43px;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: flex-end;
+  display: inline-flex;
+}
+
+.logo-text-san {
+  color: black;
+  font-size: 24px;
+  font-family: 'iCielBC Lodestone', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.logo-text-can {
+  color: black;
+  font-size: 24px;
+  font-family: 'DFPLiHei-Bd', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Menu Hamburger */
+.menu-icon-btn {
+  width: 36.67px;
+  height: 22px;
+  left: 1404px;
+  top: 45px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 36.67px;
+  height: 0px;
+  left: 36.67px;
+  position: absolute;
+  transform: rotate(-180deg);
+  transform-origin: top left;
+  outline: 3px black solid;
+  outline-offset: -1.50px;
+}
+
+.menu-line.line-1 { top: 0px; }
+.menu-line.line-2 { top: 11px; }
+.menu-line.line-3 { top: 22px; }
+
+/* Chuỗi văn bản nội dung story */
+.story-text {
+  position: absolute;
+  color: black;
+  font-size: 32px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.text-at-7pm { width: 851px; height: 50px; left: 365px; top: 2594px; }
+.text-tv-show { width: 778px; height: 113px; left: 402px; top: 3573px; }
+.text-mom-kitchen { width: 661px; height: 116px; left: 676px; top: 3947px; }
+.text-help-mom { width: 464px; height: 138px; left: 973px; top: 4134px; }
+.text-rice-boil { left: 101px; top: 5367px; }
+.text-food-smell { left: 408px; top: 6117px; }
+.text-dinners-ready { left: 836px; top: 6513px; }
+.text-help-sister { width: 602px; left: 756px; top: 7476px; }
+.text-dad-tv { left: 141px; top: 7817px; }
+.text-gather { left: 730px; top: 7817px; }
+.text-simple-meal { left: 490px; top: 9159px; }
+.text-warm-comfort { left: 372px; top: 9346px; }
+
+
+/* Container position for the back button */
+.back-btn-link {
+  display: inline-block;
+  z-index: 100;
+}
+
+.back-btn-img {
+  width: 63px;
+  height: 63px;
+  left: 345px;
+  top: 10469px;
+  cursor: pointer;
+  user-select: none;
+  filter: brightness(1);
+  transition: filter 0.2s ease, transform 0.1s ease;
+  position: absolute;
+}
+
+.back-btn-img:hover {
+  filter: brightness(0.85);
+}
+
+.back-btn-img:active {
+  filter: brightness(0.7);
+  transform: scale(0.96);
+}
+
+.next-btn-link {
+  display: inline-block;
+  z-index: 100;
+}
+
+.next-btn-img {
+  width: 277px;
+  height: 73px;
+  left: 911px;
+  top: 10460px;
+  cursor: pointer;
+  filter: brightness(1);
+  transition: filter 0.2s ease, transform 0.1s ease;
+  position: absolute;
+}
+
+.next-btn-img:hover {
+  filter: brightness(0.85);
+}
+
+.next-btn-img:active {
+  filter: brightness(0.7);
+  transform: scale(0.96);
+}
+
+
+/* ==========================================
+   MODAL COMMON STYLES
+   ========================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-container {
+  width: 1512px;
+  height: 1008px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.modal-blur-bg {
+  width: 1512px;
+  height: 982px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(20px);
+}
+
+.modal-close-btn {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  left: 1345px;
+  top: 75px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-close-circle {
+  width: 55px;
+  height: 55px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: rgba(217, 217, 217, 0.80);
+  border-radius: 9999px;
+}
+
+.modal-close-line-1 {
+  width: 23.66px;
+  height: 16px;
+  left: 31.01px;
+  top: 41.05px;
+  position: absolute;
+  transform: rotate(-135deg);
+  transform-origin: top left;
+  background: rgba(217, 217, 217, 0.80);
+  outline: 5px black solid;
+  outline-offset: -2.50px;
+}
+
+.modal-close-line-2 {
+  width: 23.66px;
+  height: 16px;
+  left: 39.05px;
+  top: 24.31px;
+  position: absolute;
+  transform: rotate(135deg);
+  transform-origin: top left;
+  background: rgba(217, 217, 217, 0.80);
+  outline: 5px black solid;
+  outline-offset: -2.50px;
+}
+
+.m-tag-text {
+  color: black;
+  font-size: 16px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: MILIKET NOODLES SPECIFICS
+   ========================================== */
+.m-mili-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-mili-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-mili-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-mili-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-mili-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-mili-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-mili-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-mili-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-mili-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-mili-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+.m-mili-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 200px;
+  position: absolute;
+}
+
+.m-mili-item-img {
+  width: 550px;
+  height: 435px;
+  left: 300px;
+  top: 315px;
+  position: absolute;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.m-mili-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+}
+
+.m-mili-detail-1 {
+  width: 126px;
+  height: 96px;
+  left: 1034px;
+  top: 367px;
+  position: absolute;
+}
+
+.m-mili-detail-2 {
+  width: 135px;
+  height: 132.04px;
+  left: 848px;
+  top: 358px;
+  position: absolute;
+  transform-origin: top left;
+}
+
+.m-mili-title {
+  width: 483px;
+  left: 739px;
+  top: 233px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-mili-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 301px;
+  position: absolute;
+}
+
+.m-mili-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 500px;
+  position: absolute;
+}
+
+.m-mili-quote {
+  width: 504px;
+  left: 742px;
+  top: 560px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: MIXED GREEN VEGGIES SOUP (CANH SẤU) SPECIFICS
+   ========================================== */
+.m-cs-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-cs-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-cs-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-cs-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-cs-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-cs-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-cs-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-cs-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-cs-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-cs-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-cs-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-cs-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+}
+
+
+.m-cs-item-img {
+  width: 320px;
+  height: 328px;
+  left: 303px;
+  top: 347px;
+  position: absolute;
+  z-index: 2;
+}
+
+.m-cs-detail-1 {
+  width: 135px;
+  height: 61px;
+  left: 753px;
+  top: 396px;
+  position: absolute;
+}
+
+.m-cs-detail-2 {
+  width: 139px;
+  height: 82px;
+  left: 924px;
+  top: 375px;
+  position: absolute;
+}
+
+.m-cs-detail-3 {
+  width: 194px;
+  height: 64px;
+  left: 1082px;
+  top: 384px;
+  position: absolute;
+}
+
+.m-cs-title {
+  width: 483px;
+  left: 739px;
+  top: 246px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-cs-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 311px;
+  position: absolute;}
+
+.m-cs-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 506px;
+  position: absolute;}
+
+.m-cs-quote {
+  width: 537px;
+  left: 739px;
+  top: 582px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: PICKLED EGGPLANT (CÀ PHÁO MUỐI) SPECIFICS
+   ========================================== */
+.m-cp-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-cp-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-cp-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-cp-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-cp-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-cp-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-cp-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-cp-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-cp-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-cp-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-cp-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-cp-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+}
+
+
+.m-cp-item-img {
+  width: 356px;
+  height: 337px;
+  left: 279px;
+  top: 355px;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.m-cp-detail-1 {
+  width: 187px;
+  height: 79px;
+  left: 739px;
+  top: 372px;
+  position: absolute;
+}
+
+.m-cp-detail-2 {
+  width: 139px;
+  height: 82px;
+  left: 957px;
+  top: 372px;
+  position: absolute;
+}
+
+.m-cp-detail-3 {
+  width: 147px;
+  height: 81px;
+  left: 1138px;
+  top: 373px;
+  position: absolute;
+}
+
+.m-cp-title {
+  width: 483px;
+  left: 739px;
+  top: 233px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-cp-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 296px;
+  position: absolute;}
+
+.m-cp-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 488px;
+  position: absolute;
+}
+
+.m-cp-quote-1 {
+  width: 546px;
+  left: 739px;
+  top: 549px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-cp-quote-2 {
+  width: 546px;
+  left: 739px;
+  top: 650px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: MORNING GLORY (RAU MUỐNG LUỘC) SPECIFICS
+   ========================================== */
+.m-rm-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-rm-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-rm-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-rm-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-rm-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-rm-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-rm-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-rm-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-rm-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-rm-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-rm-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-rm-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+}
+
+
+.m-rm-item-img {
+  width: 332px;
+  height: 341px;
+  left: 297px;
+  top: 353px;
+  position: absolute;
+  z-index: 2;
+}
+
+.m-rm-detail-1 {
+  width: 194px;
+  height: 64px;
+  left: 909px;
+  top: 388px;
+  position: absolute;
+}
+
+.m-rm-title {
+  width: 483px;
+  left: 739px;
+  top: 233px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-rm-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 306px;
+  position: absolute;
+}
+
+.m-rm-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 491px;
+  position: absolute;}
+
+.m-rm-quote {
+  width: 527px;
+  left: 739px;
+  top: 565px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: FRIED TINY SHRIMP (TÉP RANG) SPECIFICS
+   ========================================== */
+.m-tr-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-tr-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-tr-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-tr-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-tr-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-tr-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-tr-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-tr-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-tr-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-tr-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-tr-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-tr-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+}
+
+
+.m-tr-item-img {
+  width: 345px;
+  height: 312px;
+  left: 290px;
+  top: 368px;
+  position: absolute;
+  z-index: 2;
+}
+
+
+.m-tr-detail-1 {
+  width: 109px;
+  height: 97px;
+  left: 735.71px;
+  top: 402.57px;
+  position: absolute;
+  transform: rotate(-24deg);
+  transform-origin: top left;
+}
+
+.m-tr-detail-2 {
+  width: 109px;
+  height: 97px;
+  left: 728px;
+  top: 426.46px;
+  position: absolute;
+  transform: rotate(-22deg);
+  transform-origin: top left;
+}
+
+.m-tr-detail-3 {
+  width: 51.25px;
+  height: 170.15px;
+  left: 1294px;
+  top: 392px;
+  position: absolute;
+  transform: rotate(79deg);
+  transform-origin: top left;
+}
+
+.m-tr-detail-4 {
+  width: 139px;
+  height: 82px;
+  left: 887px;
+  top: 397px;
+  position: absolute;
+}
+
+.m-tr-detail-5 {
+  width: 40px;
+  height: 148px;
+  left: 1070.08px;
+  top: 344px;
+  position: absolute;
+  transform: rotate(5deg);
+  transform-origin: top left;
+}
+
+.m-tr-title {
+  width: 483px;
+  left: 739px;
+  top: 246px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-tr-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 311px;
+  position: absolute;
+}
+
+.m-tr-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 524px;
+  position: absolute;}
+
+.m-tr-quote-1 {
+  width: 537px;
+  left: 744px;
+  top: 585px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-tr-quote-2 {
+  width: 534px;
+  left: 745px;
+  top: 662px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: FRIED CLIMBING PERCH (CÁ RÔ RÁN) SPECIFICS
+   ========================================== */
+.m-cro-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-cro-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-cro-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-cro-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-cro-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-cro-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-cro-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-cro-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-cro-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-cro-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-cro-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-cro-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+
+}
+
+.m-cro-item-img {
+  width: 483.07px;
+  height: 283.54px;
+  left: 187px;
+  top: 454.15px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+  z-index: 2;
+}
+
+.m-cro-detail-1 {
+  width: 188px;
+  height: 86px;
+  left: 806px;
+  top: 392px;
+  position: absolute;
+}
+
+.m-cro-detail-2 {
+  width: 53.60px;
+  height: 130.50px;
+  left: 1105.65px;
+  top: 358px;
+  position: absolute;
+  transform: rotate(5deg);
+  transform-origin: top left;
+}
+
+.m-cro-title {
+  width: 483px;
+  left: 739px;
+  top: 246px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-cro-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 311px;
+  position: absolute;}
+
+.m-cro-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 514px;
+  position: absolute;
+}
+
+.m-cro-quote-1 {
+  width: 529px;
+  left: 739px;
+  top: 577px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-cro-quote-2 {
+  width: 504px;
+  left: 739px;
+  top: 679px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   MODAL: BRAISED PORK BELLY (THỊT BA CHỈ KHO TIÊU) SPECIFICS
+   ========================================== */
+.m-tbk-bg-1 { width: 1600px; height: 1200px; left: -44px; top: -109px; position: absolute; }
+.m-tbk-bg-2 { width: 1479px; height: 1109px; left: 16px; top: -64px; position: absolute; }
+
+.m-tbk-fg-miliket {
+  width: 254.53px;
+  height: 355.06px;
+  left: 908.51px;
+  top: 220.68px;
+  position: absolute;
+  transform: rotate(-56deg);
+  transform-origin: top left;
+}
+
+.m-tbk-fg-canhsau { width: 359px; height: 368px; left: 635px; top: 506px; position: absolute; }
+.m-tbk-fg-caphao { width: 230px; height: 218px; left: 504px; top: 397px; position: absolute; }
+.m-tbk-fg-raumuong { width: 332px; height: 341px; left: 880px; top: 289px; position: absolute; }
+.m-tbk-fg-teprang { width: 352px; height: 318px; left: 235px; top: 491px; position: absolute; }
+
+.m-tbk-fg-caroran {
+  width: 569px;
+  height: 334px;
+  left: 77px;
+  top: 255.87px;
+  position: absolute;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.m-tbk-fg-thitkho { width: 308px; height: 308px; left: 649px; top: 160px; position: absolute; }
+
+.m-tbk-card-bg {
+  width: 988px;
+  height: 607px;
+  left: 326px;
+  top: 184px;
+  position: absolute;
+}
+
+.m-tbk-card-shadow {
+  width: 533px;
+  height: 623px;
+  left: 197px;
+  top: 212px;
+  position: absolute;
+}
+
+.m-tbk-card-clip {
+  width: 80px;
+  height: 150px;
+  left: 410px;
+  top: 147px;
+  position: absolute;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  z-index: 3;
+
+}
+
+.m-tbk-item-img {
+  width: 308px;
+  height: 308px;
+  left: 309px;
+  top: 370px;
+  position: absolute;
+  z-index: 2;
+}
+.m-tbk-detail-1 {
+  width: 136px;
+  height: 64px;
+  left: 730px;
+  top: 374px;
+  position: absolute;
+}
+
+.m-tbk-detail-2 {
+  width: 51.25px;
+  height: 170.15px;
+  left: 1049px;
+  top: 356px;
+  position: absolute;
+  transform: rotate(79deg);
+  transform-origin: top left;
+}
+
+.m-tbk-detail-3 {
+  width: 74px;
+  height: 52px;
+  left: 1205px;
+  top: 386px;
+  position: absolute;
+}
+
+.m-tbk-detail-4 {
+  width: 116px;
+  height: 64px;
+  left: 1059px;
+  top: 374px;
+  position: absolute;
+}
+
+.m-tbk-title {
+  width: 483px;
+  left: 739px;
+  top: 246px;
+  position: absolute;
+  color: #312520;
+  font-size: 32px;
+  font-family: 'DFVN STAMPA V2', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-tbk-tag-ingredient {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 311px;
+  position: absolute;
+}
+
+.m-tbk-tag-mom {
+  width: 113px;
+  height: 36px;
+  left: 739px;
+  top: 473px;
+  position: absolute;
+}
+
+.m-tbk-quote-1 {
+  width: 557px;
+  left: 739px;
+  top: 536px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.m-tbk-quote-2 {
+  width: 523px;
+  left: 739px;
+  top: 650px;
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* ==========================================
+   DISH DIALOGUE POPUP EFFECTS
+   ========================================== */
+.dish-popup {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px) scale(0.85);
+  transition: opacity 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              visibility 0.25s ease;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Trigger dialogue popup when dish is hovered */
+.clickable-item:hover + .dish-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Individual Popup Coordinates & Sizes */
+.popup-miliket {
+  width: 534px;
+  height: 134px;
+  left: 980px;
+  top: 1140px;
+}
+
+.popup-canhsau {
+  width: 534px;
+  height: 134px;
+  left: 710px;
+  top: 1530px;
+}
+
+.popup-caphao {
+  width: 534px;
+  height: 134px;
+  left: 490px;
+  top: 1380px;
+}
+
+.popup-raumuong {
+  width: 534px;
+  height: 134px;
+  left: 960px;
+  top: 1320px;
+}
+
+.popup-teprang {
+  width: 534px;
+  height: 134px;
+  left: 30px;
+  top: 1480px;
+}
+
+.popup-caroran {
+  width: 534px;
+  height: 134px;
+  left: 100px;
+  top: 1150px;
+}
+
+.popup-thitkho {
+  width: 534px;
+  height: 134px;
+  left: 500px;
+  top: 1150px;
+}
+
+/* ==========================================
+   SCROLL TO REVEAL TEXT ANIMATION
+   ========================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   REVEAL CURSOR EFFECT FOR CBIAN SECTION
+   ========================================== */
+.img-mid-6-den {
+  width: 1535px;
+  height: 1151px;
+  left: -12px;
+  top: 7919px;
+  pointer-events: none;
+  z-index: 5;
+  clip-path: inset(100%);
+}
+
+.reveal-cursor-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 340px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  border-radius: 2px;
+}
+
+.reveal-cursor-box.active {
+  opacity: 1;
+  visibility: visible;
+}

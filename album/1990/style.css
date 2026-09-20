@@ -1,0 +1,413 @@
+@font-face {
+    font-family: 'iCielBC Lodestone';
+    src: url('./fonts/iCielBC Lodestone.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'DFPLiHei-Bd';
+    src: url('./fonts/DFPLiHei-Bd.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'ZeroGothic';
+    src: url('./fonts/ZeroGothic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'BVH Anto Plot Mono Trial';
+    src: url('./fonts/BVHAntoPlotMonoTrial-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'DFVN STAMPA V2';
+    src: url('./fonts/DFVN STAMPA V2.woff2') format('woff2');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    overflow-x: auto;
+}
+
+.canvas-container {
+    width: 1512px;
+    height: 982px;
+    position: relative;
+    margin: 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.hero-bg {
+    width: 1474px;
+    height: 982px;
+    left: 17px;
+    top: 0;
+    position: absolute;
+}
+
+.left-bar {
+    width: 57px;
+    height: 982px;
+    left: -40px;
+    top: 0;
+    position: absolute;
+    background: #251B0F;
+}
+
+.right-bar {
+    width: 48px;
+    height: 985px;
+    left: 1491px;
+    top: -3px;
+    position: absolute;
+    background: #251B0F;
+}
+
+.year-tab {
+    padding: 10px;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    cursor: pointer;
+    z-index: 10000;
+    pointer-events: auto;
+    transition:
+        left 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s ease;
+}
+
+.year-tab:hover {
+    left: -15px !important;
+    z-index: 10001;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tab-1975 {
+    width: 130px;
+    height: 97px;
+    left: -40px;
+    top: 535px;
+    background: #F3D573;
+}
+
+.tab-1990 {
+    width: 130px;
+    height: 96px;
+    left: -39px;
+    top: 386px;
+    background: #A3D9C9;
+}
+
+.tab-2025 {
+    width: 130px;
+    height: 96px;
+    left: -39px;
+    top: 237px;
+    background: #ffffff;
+}
+
+.text-1975 {
+    color: #251B0F;
+    font-size: 24px;
+    font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+    font-weight: 400;
+}
+
+.text-1990 {
+    color: #173C40;
+    font-size: 24px;
+    font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+    font-weight: 400;
+}
+
+.text-2025 {
+    color: #007ED3;
+    font-size: 24px;
+    font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+    font-weight: 400;
+}
+
+.action-btn {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.btn-left {
+    left: 63px;
+    top: 859px;
+}
+
+.btn-right {
+    left: 1384px;
+    top: 859px;
+}
+
+.btn-bg {
+    width: 52px;
+    height: 52px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #D9D9D9;
+    border: 4px solid #000000;
+}
+
+.arrow {
+    width: 30px;
+    height: 22px;
+    left: 11px;
+    top: 15px;
+    position: absolute;
+}
+
+.arrow-shaft {
+    width: 28px;
+    height: 4px;
+    top: 9px;
+    position: absolute;
+    display: block;
+    background: #000000;
+    border-radius: 2px;
+}
+
+.arrow-head {
+    width: 13px;
+    height: 13px;
+    top: 4.5px;
+    position: absolute;
+    display: block;
+    border-top: 4px solid #000000;
+    border-left: 4px solid #000000;
+    border-radius: 1px;
+}
+
+.arrow-left .arrow-shaft {
+    left: 2px;
+}
+
+.arrow-left .arrow-head {
+    left: 1px;
+    transform: rotate(-45deg);
+}
+
+.arrow-right .arrow-shaft {
+    right: 2px;
+}
+
+.arrow-right .arrow-head {
+    right: 1px;
+    transform: rotate(135deg);
+}
+
+.quote-container {
+    width: 335px;
+    height: 104px;
+    padding: 10px;
+    left: 221px;
+    top: 772px;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.quote-text {
+    width: 309px;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'BVH Anto Plot Mono Trial', monospace, sans-serif;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.draggable {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.photo-frame {
+    width: 289px;
+    height: 391px;
+    left: 213px;
+    top: 125.51px;
+    position: absolute;
+    transform: rotate(-6deg);
+    transform-origin: top left;
+}
+
+.photo-frame img {
+    width: 329.91px;
+    height: 420.18px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.img-1 {
+    width: 181px;
+    height: 312px;
+    left: 1088px;
+    top: 94.24px;
+    position: absolute;
+    transform: rotate(-8deg);
+    transform-origin: top left;
+}
+
+.img-2 {
+    width: 85.62px;
+    height: 170.59px;
+    left: 188px;
+    top: 111.52px;
+    position: absolute;
+    transform: rotate(-32deg);
+    transform-origin: top left;
+}
+
+.img-3 {
+    width: 263.38px;
+    height: 180.24px;
+    left: 231px;
+    top: 577.57px;
+    position: absolute;
+    transform: rotate(-1deg);
+    transform-origin: top left;
+}
+
+.img-4 {
+    width: 408px;
+    height: 286px;
+    left: 583px;
+    top: 174px;
+    position: absolute;
+}
+
+.img-5 {
+    width: 256.08px;
+    height: 152.98px;
+    left: 496.60px;
+    top: 419px;
+    position: absolute;
+    transform: rotate(7deg);
+    transform-origin: top left;
+}
+
+.img-6 {
+    width: 133.43px;
+    height: 75.89px;
+    left: 239.61px;
+    top: 420.99px;
+    position: absolute;
+    transform: rotate(34deg);
+    transform-origin: top left;
+}
+
+.img-7 {
+    width: 289px;
+    height: 620px;
+    left: 568px;
+    top: 874.84px;
+    position: absolute;
+    transform: rotate(-73deg);
+    transform-origin: top left;
+}
+
+.img-8 {
+    width: 262px;
+    height: 205px;
+    left: 826px;
+    top: 497px;
+    position: absolute;
+}
+
+.img-9 {
+    width: 230.64px;
+    height: 120.05px;
+    left: 668px;
+    top: 652.83px;
+    position: absolute;
+    transform: rotate(-4deg);
+    transform-origin: top left;
+}
+
+.img-10 {
+    width: 173px;
+    height: 217px;
+    left: 1073.75px;
+    top: 551px;
+    position: absolute;
+    transform: rotate(7deg);
+    transform-origin: top left;
+}
+
+.img-11 {
+    width: 57.92px;
+    height: 115.39px;
+    left: 1081.88px;
+    top: 510px;
+    position: absolute;
+    transform: rotate(26deg);
+    transform-origin: top left;
+}
+#timeline1990 {
+    cursor: pointer;
+
+    transform: rotate(-9deg) scale(1);
+    transform-origin: center center;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.65s ease,
+        opacity 0.55s ease;
+
+    will-change: transform, filter, opacity;
+}
+
+#timeline1990:hover {
+    transform: rotate(-9deg) scale(1.045);
+
+    filter:
+        brightness(1.06)
+        drop-shadow(0 14px 18px rgba(0, 0, 0, 0.18));
+}
+
+#timeline1990.is-opening {
+    transform: rotate(-9deg) scale(1.08);
+
+    opacity: 0;
+
+    filter:
+        brightness(1.1)
+        blur(1px);
+
+    pointer-events: none;
+}
