@@ -875,7 +875,7 @@ body.page-leaving {
 .question-intro {
     display: flex;
     width: 100%;
-    min-height: 982px;
+    min-height: 960px;
     padding: 31px 72px 433px 72px;
     box-sizing: border-box;
     flex-direction: column;

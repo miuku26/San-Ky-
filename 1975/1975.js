@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Common UI Elements
   const nextBtn = document.querySelector('.btn-next-wrapper');
-  const squareBtn = document.querySelector('.btn-square-wrapper');
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   
   const flipCardXepHang = document.getElementById('flip-card-xep-hang');
@@ -507,12 +506,6 @@ if (targetIconDrop) {
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       // Event listener cho nút Next
-    });
-  }
-
-  if (squareBtn) {
-    squareBtn.addEventListener('click', () => {
-      // Event listener cho nút vuông
     });
   }
 
